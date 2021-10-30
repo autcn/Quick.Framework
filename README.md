@@ -50,7 +50,7 @@ Table of Contents
 
 # 2.框架组成
 
-![](https://raw.githubusercontent.com/autcn/Quick.Framework/main/README.assets/quick-framework.png)
+![](https://raw.githubusercontent.com/autcn/Quick.Framework/master/README.assets/quick-framework.png)
 
 ​          上图是框架核心的组成，为了便利性和架构的平衡，并没有拆解的太细，而是相对集成，降低复杂度。因此把轻量的Dapper ORM也放到了核心里，而重量级的Entity Framework则单独提供了一个Dll来支持，根据需要进行引用。
 

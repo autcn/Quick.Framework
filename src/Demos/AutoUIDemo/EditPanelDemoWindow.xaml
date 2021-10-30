@@ -24,15 +24,17 @@
             <RowDefinition Height="auto" />
         </QEditPanel.RowDefinitions>
         <SpaceStackPanel Orientation="Horizontal" Height="30">
-            <TextBlock Text="电话：" VerticalAlignment="Center" />
-            <QElement Name="Phone" Width="150" />
             <!--与ViewModel中属性同名，将被替代-->
             <TextBlock Text="姓名：" VerticalAlignment="Center" />
-            <QElement x:Name="Name" Width="100" />
+            <QElement Name="Name" Width="100" />
+            <TextBlock Text="电话：" VerticalAlignment="Center" />
+            <QElement Name="Phone" Width="150" />
             <TextBlock Text="职业：" VerticalAlignment="Center" />
             <QElement Name="Occupation" Width="100" ContentStyle="{StaticResource TestComboBoxStyle}" />
+
             <!--其他控件，仍然可以常规绑定-->
             <TextBlock Text="{Binding Path=Info}" VerticalAlignment="Center" Foreground="Blue" FontSize="16" />
+
         </SpaceStackPanel>
         <SpaceStackPanel Orientation="Horizontal" Height="30" Grid.Row="1" Margin="0,10,0,0">
             <TextBlock Text="喜欢的颜色(点击修改)：" VerticalAlignment="Center" />
