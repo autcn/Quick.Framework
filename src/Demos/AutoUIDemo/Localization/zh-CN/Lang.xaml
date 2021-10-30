@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- 模块名[.子模块名1][.XXX].功能描述，Qf开头的为框架内置资源-->
+
+    <!-- 覆盖系统字符串，自定义MessageBox标题 -->
+    <sys:String x:Key="Qf.MsgBox.DefaultWndTitle">Quick框架演示程序</sys:String>
+
+    <!-- 应用程序字符串 -->
+    <sys:String x:Key="App.MainWindow.Title">Quick框架自动UI演示程序</sys:String>
+    <sys:String x:Key="App.ExitWarning">确定要退出吗？</sys:String>
+
+    <sys:String x:Key="Student.Edit.Group.Base">基础信息</sys:String>
+    <sys:String x:Key="Student.Edit.Group.Extent">扩展信息</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Name">姓名</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Gender">性别</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Phone">电话</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Age">年龄</sys:String>
+    <sys:String x:Key="Student.Edit.Title.DateOfBirth">生日</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Height">身高</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Weight">体重</sys:String>
+    <sys:String x:Key="Student.Edit.Title.Address">地址</sys:String>
+
+    <sys:String x:Key="Student.Edit.Remark.Weight">公斤</sys:String>
+    <sys:String x:Key="Student.Edit.Remark.Height">厘米</sys:String>
+
+    <sys:String x:Key="Demo.Control.Edit.NameTitle">名字</sys:String>
+    <sys:String x:Key="Demo.Control.Edit.PhoneTitle">电话</sys:String>
+    <sys:String x:Key="Demo.Control.Edit.AgeRangeTip">年龄必须介于12到60岁</sys:String>
+    <sys:String x:Key="Demo.Control.Edit.HeightUnitRemark">厘米</sys:String>
+    <sys:String x:Key="Demo.Control.Edit.Occupation.Student">学生</sys:String>
+    
+</ResourceDictionary>

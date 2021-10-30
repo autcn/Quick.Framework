@@ -1,0 +1,72 @@
+﻿<Window x:Class="SimpleMvvmDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="QuickFramework - MVVM演示" Height="560" Width="980">
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Ctrl" Key="F5"  Command="{DXCommand Download()}"></KeyBinding>
+    </Window.InputBindings>
+    <Grid Margin="9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--第1行-->
+        <Grid Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="下载地址：" VerticalAlignment="Center" />
+            <!--演示数据验证-->
+            <hc:TextBox Grid.Column="1" Text="{Binding Path=DownloadUrl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" 
+                   Margin="10,0" ShowClearButton="True" x:Name="tbxDownloadUrl" />
+            <!--演示DXEvent-->
+            <Button Grid.Column="2" Content="下载图片" Click="{DXEvent Download()}" Width="80" Margin="0"  />
+            <!--演示先调用事件处理，然后调用ViewModel-->
+            <Button Grid.Column="3" Content="清空" Click="btnClear_Click" Width="80" Margin="10,0,0,0"  />
+            <!--演示DXEvent-->
+            <Button Grid.Column="4" Content="还原" Click="{DXEvent RestoreDefaultUrl()}" Width="80" Margin="10,0,0,0"  />
+        </Grid>
+        <!--第2行-->
+        <StackPanel Grid.Row="1" Height="30" Orientation="Horizontal" Margin="0,10,0,0">
+            <TextBlock Text="下载状态：" VerticalAlignment="Center" />
+            <!--演示QBinding直接转换-->
+            <Rectangle Width="80" Margin="10,0,0,0" Fill="{QBinding Path=DownloadResult,ConverterParameter=[Gray][Success:Green][Failed:Red]}" />
+            <!--演示DXBinding绑定函数-->
+            <TextBlock Text="{DXBinding GetStatusDes(DownloadResult)}" VerticalAlignment="Center" Margin="10,0,0,0"  FontWeight="Bold"
+                      Foreground="{QBinding Path=DownloadResult,ConverterParameter=[Gray][Success:Green][Failed:Red]}" FontSize="14" />
+            <!--演示弹保存文件对话框-->
+            <Button Content="保存图片" Click="btnSaveToFile_Click" Width="100" Margin="10,0,0,0"  />
+            <!--弹对话框演示-->
+            <Button Content="登陆" Click="btnLogin_Click" Width="100" Margin="10,0,0,0"  />
+
+            <TextBlock Foreground="Blue" FontSize="14" Text="{Binding Path=UserName}" Margin="20,0,0,0" VerticalAlignment="Center" />
+            <TextBlock Text="尺寸单位：" VerticalAlignment="Center" />
+            <ComboBox SelectedIndex="{Binding Path=UnitIndex,FallbackValue=0}" Margin="6,0,0,0">
+                <ComboBoxItem>像素</ComboBoxItem>
+                <ComboBoxItem>厘米</ComboBoxItem>
+            </ComboBox>
+            <TextBlock VerticalAlignment="Center" Text="图片大小：" Margin="20,0,0,0" />
+            <TextBlock Text="{DXBinding 'Triggers(Image, UnitIndex).GetImageSize()'}" Margin="0,0,0,0" VerticalAlignment="Center" />
+            <TextBlock VerticalAlignment="Center" Text="占用空间：" Margin="20,0,0,0" />
+            <TextBlock Text="{DXBinding 'Format.ToDataSizeDes(DataSize)'}" Margin="0,0,0,0" VerticalAlignment="Center" />
+        </StackPanel>
+        <Image Grid.Row="3" Margin="0,10,0,0" Source="{Binding Path=Image}">
+            <Image.RenderTransform>
+                <TranslateTransform x:Name="imgTranslateTransform" />
+            </Image.RenderTransform>
+        </Image>
+        <!--演示LoadingBox-->
+        <hc:LoadingBox Grid.RowSpan="9999" Margin="-9" />
+    </Grid>
+</Window>

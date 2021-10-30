@@ -1,0 +1,15 @@
+﻿<Window x:Class="IocDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IocDemo"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="QuickFramework - 依赖注入演示" Height="450" Width="800">
+    <Grid Margin="8">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Click="btnDownload_Click" Width="100" Content="下载测试" />
+            <Button Click="btnCallTestService_Click" Width="100" Margin="14,0,0,0" Content="调用服务" />
+        </StackPanel>
+    </Grid>
+</Window>

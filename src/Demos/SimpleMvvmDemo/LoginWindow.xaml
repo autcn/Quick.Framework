@@ -1,0 +1,39 @@
+﻿<Window x:Class="SimpleMvvmDemo.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="用户登陆" SizeToContent="WidthAndHeight" ResizeMode="NoResize"
+        ShowInTaskbar="False">
+    <Grid>
+        <Grid Margin="30" TextBlock.FontSize="14">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="用户名：" VerticalAlignment="Center" />
+            <hc:TextBox Grid.Column="1" Width="200"
+                    Text="{Binding Path=UserName, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+
+            <TextBlock Text="提示：用户名密码均为:admin" Margin="0,6,0,0" Grid.Row="1" Grid.ColumnSpan="2" Foreground="#AAAAAA" FontStyle="Italic" />
+            <TextBlock Grid.Row="1" Text="密   码：" VerticalAlignment="Center" Margin="0,30,0,0" />
+            <hc:PasswordBox Grid.Row="1" Grid.Column="1" Width="200" Margin="0,30,0,0"  IsSafeEnabled="False" ShowEyeButton="True"
+                    UnsafePassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" />
+
+            <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Height="34" Margin="0,30,0,0" HorizontalAlignment="Center">
+                <Button Content="确定" Width="80" Click="btnOk_Click" />
+                <Button Content="取消" Width="80" Margin="30,0,0,0" Click="btnCancel_Click"  />
+            </StackPanel>
+        </Grid>
+        <!--用于显示侧边提示-->
+        <StackPanel x:Name="growlPanel" IsHitTestVisible="True" />
+    </Grid>
+   
+</Window>

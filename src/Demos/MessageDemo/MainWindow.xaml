@@ -1,0 +1,18 @@
+﻿<Window x:Class="MessageDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MessageDemo"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="QuickFramework - 消息机制演示" Height="450" Width="800">
+    <Grid Margin="8">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBlock Text="搜索关键词：" VerticalAlignment="Center" />
+            <hc:TextBox Width="200" x:Name="tbxKeyword" Text="{Binding Path=Keyword,UpdateSourceTrigger=PropertyChanged}" />
+            <Button Content="搜索" Margin="14,0,0,0"  Width="100" Click="{DXEvent DoSearch()}" IsDefault="True" />
+            <Button Content="弹出窗口测试消息接收" Margin="20,0,0,0" Width="160" Click="btnPopupWindow_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
