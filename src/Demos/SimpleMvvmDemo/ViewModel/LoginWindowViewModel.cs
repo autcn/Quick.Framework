@@ -20,6 +20,7 @@ namespace SimpleMvvmDemo.ViewModel
         #region Public functions
         public bool Login()
         {
+            Validate();
             if (string.Compare("admin", UserName, true) != 0 || Password != "admin")
             {
                 LoginSuccess = false;

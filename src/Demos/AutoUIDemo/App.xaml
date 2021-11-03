@@ -10,9 +10,6 @@
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Resources/FrameworkCore.xaml"/>
-
-                <!--此处预置语言资源文件，是为了Xaml里预览和提示用，并非必要，框架启动时，会自动加载-->
-                <ResourceDictionary Source="pack://application:,,,/Localization/zh-CN/Lang.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

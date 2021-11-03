@@ -26,6 +26,7 @@
             <TextBlock Grid.Row="1" Text="密   码：" VerticalAlignment="Center" Margin="0,30,0,0" />
             <hc:PasswordBox Grid.Row="1" Grid.Column="1" Width="200" Margin="0,30,0,0"  IsSafeEnabled="False" ShowEyeButton="True"
                     UnsafePassword="{Binding Path=Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" />
+            <TextBlock Text="{Binding Error}" />
 
             <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Height="34" Margin="0,30,0,0" HorizontalAlignment="Center">
                 <Button Content="确定" Width="80" Click="btnOk_Click" />

@@ -17,7 +17,7 @@ namespace AutoUIDemo.Controls
         }
         public static readonly DependencyProperty SelectedColorProperty = DependencyProperty.Register(
          "SelectedColor", typeof(string), typeof(MyColorPicker),
-       new FrameworkPropertyMetadata("#FFFFFFFF", new PropertyChangedCallback(SelectedColorPropertyChangedCallback)));
+       new FrameworkPropertyMetadata("#FFFFFFFF", FrameworkPropertyMetadataOptions.BindsTwoWayByDefault, new PropertyChangedCallback(SelectedColorPropertyChangedCallback)));
 
         public static void SelectedColorPropertyChangedCallback(DependencyObject sender, DependencyPropertyChangedEventArgs arg)
         {

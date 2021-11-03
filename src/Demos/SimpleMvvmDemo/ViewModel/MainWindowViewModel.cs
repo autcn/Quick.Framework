@@ -48,6 +48,8 @@ namespace SimpleMvvmDemo.ViewModel
         public long DataSize { get; set; }
 
         public int UnitIndex { get; set; } = 0;
+
+        public string Path { get; set; } = "asdf";
         #endregion
 
         #region Events

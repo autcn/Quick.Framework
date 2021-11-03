@@ -72,5 +72,10 @@ namespace LocalStorageDemo
             //注入主窗口ViewModel
             context.ServiceBuilder.RegisterType<MainWindowViewModel>().SingleInstance();
         }
+
+        public override void OnApplicationShutdown(ApplicationShutdownContext context)
+        {
+            context.ServiceProvider.GetService<ILocalStorage>().Clear();
+        }
     }
 }
