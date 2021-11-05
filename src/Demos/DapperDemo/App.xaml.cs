@@ -58,7 +58,7 @@ namespace DapperDemo
             //添加多语言支持(必须显式指明要添加的语言文件)
             context.ServiceBuilder.AddLocalization(options =>
             {
-                options.AddFile("Lang.xaml");
+                options.AddFile(this, "Lang.xaml");
             });
 
             //以下服务及其子类都被注入为短暂实例
