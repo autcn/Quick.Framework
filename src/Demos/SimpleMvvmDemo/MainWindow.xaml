@@ -62,13 +62,13 @@
             <TextBlock VerticalAlignment="Center" Text="占用空间：" Margin="20,0,0,0" />
             <TextBlock Text="{DXBinding 'Format.ToDataSizeDes(DataSize)'}" Margin="0,0,0,0" VerticalAlignment="Center" />
         </StackPanel>
-        <hc:FilePicker SelectedPath="{Binding Path=Path}" />
+        
         <Image Grid.Row="4" Margin="0,10,0,0" Source="{Binding Path=Image}">
             <Image.RenderTransform>
                 <TranslateTransform x:Name="imgTranslateTransform" />
             </Image.RenderTransform>
         </Image>
         <!--演示LoadingBox-->
-        <hc:LoadingBox Grid.RowSpan="9999" Margin="-9" />
+        <hc:LoadingBox Grid.RowSpan="9999" Margin="-9"  />
     </Grid>
 </Window>

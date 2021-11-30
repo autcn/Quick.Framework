@@ -3,6 +3,7 @@ using Quick;
 using SimpleMvvmDemo.ViewModel;
 using System;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 
 /*工程创建说明：
@@ -42,7 +43,6 @@ namespace SimpleMvvmDemo
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
             //从IOC容器中获取Mainwindow
             MainWindow mainWindow = ServiceProvider.GetService<MainWindow>();
             mainWindow.Show();
