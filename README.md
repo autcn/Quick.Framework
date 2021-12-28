@@ -1,8 +1,6 @@
 **Nuget包地址：**
 https://www.nuget.org/packages/QuickFramework.Wpf/
 
-**特别说明：目前源代码只有Demo代码，核心代码等第一个稳定版本发布后再上传**
-
 **QQ交流群：196554374**
 
 Table of Contents
