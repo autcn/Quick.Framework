@@ -12,7 +12,6 @@ using System.Windows;
 /*引用库说明及帮助文档：
  Quick.Core 框架核心，基于.net Standard 2.0
  Quick.Wpf  框架WPF核心，基于.net Framework 4.6.1
- Quick.HandyControl UI基础支持，帮助地址：https://handyorg.github.io/handycontrol/quick_start/
  Newtonsoft.Json  基础json转换支持，帮助地址：https://www.newtonsoft.com/json/help/html/Introduction.htm
  Autofac  依赖注入基础支持，帮助地址：https://autofac.readthedocs.io/en/latest/getting-started/index.html
  AutoMapper 对象映射支持, 帮助地址：https://docs.automapper.org/en/stable/index.html
@@ -71,11 +70,6 @@ namespace LocalStorageDemo
 
             //注入主窗口ViewModel
             context.ServiceBuilder.RegisterType<MainWindowViewModel>().SingleInstance();
-        }
-
-        public override void OnApplicationShutdown(ApplicationShutdownContext context)
-        {
-            context.ServiceProvider.GetService<ILocalStorage>().Clear();
         }
     }
 }

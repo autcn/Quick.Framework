@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Jack</authors>
+    <icon>icon.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <description>Entity framework for quick framework</description>
+    <releaseNotes>The alpha version.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>quick wpf entityframework</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.6.1" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\docs\icon.png" target="" />
+  </files>
+</package>

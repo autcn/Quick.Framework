@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62792AA9-CC86-4F25-8FEB-CE2110DF785B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Quick</RootNamespace>
+    <AssemblyName>Quick.Wpf</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=6.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.6.2.0\lib\netstandard2.0\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm, Version=21.1.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.21.1.5\lib\net452\DevExpress.Mvvm.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.UI, Version=21.1.0.0, Culture=neutral, PublicKeyToken=382ad28f6ae31f30, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpressMvvm.21.1.5\lib\net452\DevExpress.Mvvm.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.Console.4.0.0\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\ObservableCollectionAutoMapperExtensions.cs" />
+    <Compile Include="Controls\Attatched\InputCharsModels.cs" />
+    <Compile Include="Controls\Attatched\PasswordBoxHelper.cs" />
+    <Compile Include="Controls\DataGridTextColumnEx.cs" />
+    <Compile Include="Controls\LoadingBox.cs" />
+    <Compile Include="Controls\PageBar.cs" />
+    <Compile Include="Controls\QEditWindowContent.xaml.cs">
+      <DependentUpon>QEditWindowContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QPasswordBox.cs" />
+    <Compile Include="Controls\SimplePanel.cs" />
+    <Compile Include="Converters\Internal\ComboboxValueBindingConverter.cs" />
+    <Compile Include="Converters\Internal\EnumComboboxValueBindingConverter.cs" />
+    <Compile Include="Controls\AutoFitTextControl.cs" />
+    <Compile Include="Controls\FilePicker.cs" />
+    <Compile Include="Controls\IPAddressControl.cs" />
+    <Compile Include="Controls\Loading.cs" />
+    <Compile Include="Controls\SpaceStackPanel.cs" />
+    <Compile Include="Controls\SpinnerControl.cs" />
+    <Compile Include="Controls\IPAddressTypeConverter.cs" />
+    <Compile Include="Controls\TimeInput.cs" />
+    <Compile Include="Messenger\QMessenger.cs" />
+    <Compile Include="Messenger\IMessenger.cs" />
+    <Compile Include="Mvvm\DapperAppBindableBase.cs" />
+    <Compile Include="Mvvm\Enum\EnumHelper.cs" />
+    <Compile Include="Mvvm\IFormat.cs" />
+    <Compile Include="Mvvm\DapperEditBindableBase.cs" />
+    <Compile Include="Mvvm\Enum\EnumCollectionManager.cs" />
+    <Compile Include="Mvvm\Enum\EnumCollectionStorage.cs" />
+    <Compile Include="Mvvm\Enum\IEnumCollectionManager.cs" />
+    <Compile Include="Mvvm\IEditableControl.cs" />
+    <Compile Include="Mvvm\IEditableObject.cs" />
+    <Compile Include="Mvvm\QEditObjectHelper.cs" />
+    <Compile Include="Mvvm\QValidatableBase.cs" />
+    <Compile Include="Mvvm\Validation\IValidatableObject.cs" />
+    <Compile Include="Mvvm\QBindableAppBase.cs" />
+    <Compile Include="Mvvm\QEditBindableBase.cs" />
+    <Compile Include="Mvvm\Enum\EnumItemViewModel.cs" />
+    <Compile Include="Mvvm\Validation\QRegularExpressionAttribute.cs" />
+    <Compile Include="Mvvm\Validation\QRequiredAttribute.cs" />
+    <Compile Include="Mvvm\QBinding.cs" />
+    <Compile Include="Resources\StyleKeysProperties.cs" />
+    <Compile Include="Controls\AutoCompleteComboBox.cs" />
+    <Compile Include="Controls\DataGridHelper.cs" />
+    <Compile Include="Controls\PageGrid.cs" />
+    <Compile Include="Controls\PageItemsControl.cs" />
+    <Compile Include="Controls\RadioSelector.cs" />
+    <Compile Include="Controls\RichTextBoxExtensions.cs" />
+    <Compile Include="Controls\Attatched\TextBoxHelper.cs" />
+    <Compile Include="Converters\BooleanToValueConverter.cs" />
+    <Compile Include="Converters\FileToImageSourceConverter.cs" />
+    <Compile Include="Converters\Internal\IPAddressToStringConverter.cs" />
+    <Compile Include="Converters\Internal\ObjectToStringConverter.cs" />
+    <Compile Include="Converters\Internal\StringToIPAddressConverter.cs" />
+    <Compile Include="Converters\Internal\StringToTimeConverter.cs" />
+    <Compile Include="Converters\Internal\TimeToStringConverter.cs" />
+    <Compile Include="Converters\NullableToValueConverter.cs" />
+    <Compile Include="Converters\UniversalConverter .cs" />
+    <Compile Include="Localization\QLocalizationProperties.cs" />
+    <Compile Include="Localization\ILocalization.cs" />
+    <Compile Include="Localization\Localization.cs" />
+    <Compile Include="Localization\LocalizationExtensions.cs" />
+    <Compile Include="Localization\LocalizationOptions.cs" />
+    <Compile Include="Localization\StrongTextExtensions.cs" />
+    <Compile Include="MessageBox\IMessageBox.cs" />
+    <Compile Include="MessageBox\QMessageBoxExtensions.cs" />
+    <Compile Include="MessageBox\SystemMessageBox.cs" />
+    <Compile Include="Mvvm\QBindableBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QWpfApplication.cs" />
+    <Compile Include="QWpfModule.cs" />
+    <Compile Include="QServiceProvider.cs" />
+    <Compile Include="UniversalEdit\Attributes\QEditObjectDescriptionAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\EnumNullDescriptionAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QEnumRadioSelectorAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QEnumComboBoxAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QDataGridAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QToggleButtonAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QEditContextSorter.cs" />
+    <Compile Include="UniversalEdit\Attributes\QRadioSelectorAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QComboBoxAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QDatePickerAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QEditAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QCheckBoxAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QPasswordBoxAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QSpinnerAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QFilePickerAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QLabelAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QSliderAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QAutoCompleteComboBoxAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QTimeAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QIPAddressAttribute.cs" />
+    <Compile Include="UniversalEdit\Attributes\QTextBoxAttribute.cs" />
+    <Compile Include="Controls\QDataGrid.cs" />
+    <Compile Include="Controls\QEditBar.cs" />
+    <Compile Include="Controls\QEditControl.xaml.cs">
+      <DependentUpon>QEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UniversalEdit\QEditContextCache.cs" />
+    <Compile Include="Controls\QEditPanel.cs" />
+    <Compile Include="Controls\QElement.cs" />
+    <Compile Include="UniversalEdit\QEditWindowHelper.cs" />
+    <Compile Include="UniversalEdit\QEditWindowOptions.cs" />
+    <Compile Include="UniversalEdit\Render\IQEditControlsRender.cs" />
+    <Compile Include="UniversalEdit\Render\QAutoCompleteComboBoxCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QDatePickerCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QEnumRadioSelectorCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QEnumComboBoxCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QDataGridCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QTimePickerCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QToggleButtonCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QRadioSelectorCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QEditControlsRender.cs" />
+    <Compile Include="UniversalEdit\Render\QEditCreatorExtensions.cs" />
+    <Compile Include="UniversalEdit\Render\QFilePickerCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QCheckBoxCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QSliderCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QLabelCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QEditCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QIPAddressCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QPasswordBoxCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QTemplateLoader.cs" />
+    <Compile Include="UniversalEdit\Render\QComboBoxCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QSpinnerCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QTextBoxCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QEditControlCreatorBase.cs" />
+    <Compile Include="UniversalEdit\Render\IQEditControlCreator.cs" />
+    <Compile Include="UniversalEdit\Render\QEditContext.cs" />
+    <Compile Include="UniversalEdit\Render\QEditRenderControlsResult.cs" />
+    <Compile Include="Utils\DesignerHelper.cs" />
+    <Compile Include="Utils\CSharpTypeCategory.cs" />
+    <Compile Include="Utils\EventSenderExtensions.cs" />
+    <Compile Include="Utils\WindowsApi.cs" />
+    <Compile Include="Utils\WpfHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\AutoCompleteComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AutoFitTextControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\FilePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\IPAddressControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\LoadingBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PageBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\QPasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\QEditWindowContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\RadioSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CommonBrushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\SpinnerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TimeInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Localization\en-US\Lang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Localization\zh-CN\Lang.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\AutoUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\StyleExtensions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Lite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\QEditBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\QEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QDataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Quick.Core\Quick.Core.csproj">
+      <Project>{2be43f64-5601-4839-8178-9246dd06ee83}</Project>
+      <Name>Quick.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

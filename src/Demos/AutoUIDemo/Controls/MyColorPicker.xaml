@@ -2,14 +2,13 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AutoUIDemo.Controls"
              mc:Ignorable="d" d:DesignWidth="60">
     <Grid MouseLeftButtonUp="Rectangle_MouseLeftButtonUp" Background="Transparent">
         <Rectangle x:Name="rect" Fill="White" />
         <Popup x:Name="popup" PlacementTarget="{x:Reference rect}" StaysOpen="False" VerticalOffset="3">
-            <hc:ColorPicker x:Name="hcColorPicker" Canceled="ColorPicker_Canceled" Confirmed="ColorPicker_Confirmed"  />
+            <!--<hc:ColorPicker x:Name="hcColorPicker" Canceled="ColorPicker_Canceled" Confirmed="ColorPicker_Confirmed"  />-->
         </Popup>
     </Grid>
 </UserControl>

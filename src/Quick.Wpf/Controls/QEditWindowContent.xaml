@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Quick.QEditWindowContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Margin="8,5,8,8" 
+             xmlns:local="clr-namespace:Quick"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid Margin="{Binding ElementName=wnd,Path=Margin}" x:Name="abc">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <local:QEditControl x:Name="qEditControl" ErrorTemplate="{StaticResource {x:Static local:StyleKeysProperties.InputElementErrorTemplateKey}}" TitleMargin="0,2,0,20" InputMargin="4,2,0,20" />
+            <StackPanel Orientation="Horizontal" Height="30" Grid.Row="1" HorizontalAlignment="Right" Margin="0,10,10,0">
+                <Button Content="{DynamicResource Qf.QEditWnd.ButtonTextOkAgain}" x:Name="btnOkAndAgain" Focusable="False" Visibility="Collapsed" Margin="0,0,14,0" Width="100" Click="ButtonOKAndAgain_Click" />
+                <Button Content="{DynamicResource Qf.QEditWnd.ButtonTextOk}" x:Name="btnOk" Width="80"  Focusable="False" Click="ButtonOK_Click" />
+                <Button Content="{DynamicResource Qf.QEditWnd.ButtonTextCancel}" Width="80" Margin="14,0,0,0"  Focusable="False" Click="ButtonCancel_Click" />
+            </StackPanel>
+        </Grid>
+        <local:LoadingBox Token="509373C4-0FC9-46F7-A49C-58061E88D4F0" x:Name="loadingBox" />
+    </Grid>
+</UserControl>

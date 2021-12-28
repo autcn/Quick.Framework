@@ -40,7 +40,7 @@ namespace AutoUIDemo.Controls
             {
                 SolidColorBrush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(SelectedColor));
                 rect.Fill = brush;
-                hcColorPicker.SelectedBrush = brush;
+                //hcColorPicker.SelectedBrush = brush;
             }
         }
 
@@ -54,11 +54,5 @@ namespace AutoUIDemo.Controls
             popup.IsOpen = false;
         }
 
-        private void ColorPicker_Confirmed(object sender, HandyControl.Data.FunctionEventArgs<Color> e)
-        {
-            rect.Fill = hcColorPicker.SelectedBrush;
-            SelectedColor = hcColorPicker.SelectedBrush.Color.ToString();
-            popup.IsOpen = false;
-        }
     }
 }

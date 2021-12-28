@@ -112,13 +112,11 @@ AutoMapper帮助文档：https://docs.automapper.org/en/stable/index.html
 
 ## 2.12 样式增强
 
-​        对于UI控件样式的增强，确实是一个耗费巨大精力和长耗时的工作，因此本框架没有做过多的控件样式增强，而是依赖Handy Control来辅助实现一些界面效果。需要说明的是，这里并没有直接引用Handy Control的包，而是引用的改了源码的副本，因为Handy Control的控件并没有考虑MVVM机制下错误校验，存在一些缺陷，必须修改源码以解决这些问题。
-
-Handy Control帮助地址：https://handyorg.github.io/handycontrol/quick_start/
+​        对于UI控件样式的增强，确实是一个耗费巨大精力和长耗时的工作，因此本框架没有做过多的控件样式增强，开发者可以使用任何第三方UI。Quick框架本身提供了一套简易的UI皮肤，用户可以参照源码，很容易进行重写。
 
 ## 2.13 扩展控件
 
-​        本框架提供了一些Handy Control没有的控件，如：AutoCompleteComboBox，AutoFitTextControl，FilePicker，IPAddressControl，LoadingBox，PageBar，PageGrid，PageItemsControl，RadioSelector，SpaceStackPanel，SpinnerControl等等，同时也增加了对TextBox输入的限制功能。
+​        本框架提供了一些增强的控件，如：AutoCompleteComboBox，AutoFitTextControl，FilePicker，IPAddressControl，LoadingBox，PageBar，PageGrid，PageItemsControl，RadioSelector，SpaceStackPanel，SpinnerControl等等，同时也增加了对TextBox输入的限制功能。
 
 ## 2.14 MVVM增强
 
@@ -868,3 +866,72 @@ public class EditPanelDemoViewModel : QValidatableBase
 ```
 
 ​       通过在ViewModel中为枚举标记QEnumComboBox特性，Xaml中的QElement将运行时自动渲染出ComboBox效果，并自动绑定，这个机制又节省了大量代码
+
+## 3.10 皮肤的集成
+
+### 3.10.1 Quick框架提供的皮肤
+
+Quick框架本身提供一套可选的UI皮肤样式，包含黑白两种风格，开发者如果不满意有两个选择，一个是直接用Quick皮肤的源码进行重写，实现完全自定义的皮肤；相比于其他第三方框架的复杂代码，Quick的皮肤源码要简单的多。第二个选择是使用第三方的皮肤，比如Material Design或Handy Control等UI。
+
+Quick框架皮肤集成(参见QuickThemeDemo工程)，在app.xaml里添加如下代码
+
+黑色风格：
+
+``` xaml
+<Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Themes/AutoUI.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ColorBlack.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+```
+
+白色风格：
+
+``` xaml
+<Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Themes/AutoUI.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ColorBlue.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+```
+
+这里需要说明的是引用AutoUI.xaml是为了使用Quick框架的自动UI和一些扩展控件，不需要使用的情况下可以不引入。
+
+另外，Quick框架提供了一个轻量的样式呈现默认界面，在不使用任何皮肤的情况下，建议引入该样式文件，获得更好的界面呈现
+
+``` xaml
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Themes/Lite.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    <Application.Resources>
+```
+
+### 3.10.2 使用其他框架提供的皮肤
+
+以Material Design为例，使用方法跟不用Quick框架时没有区别，如下所示：
+
+``` xaml
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Themes/AutoUI.xaml"/>
+                <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="DeepPurple" SecondaryColor="Lime" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+```
+
+
+

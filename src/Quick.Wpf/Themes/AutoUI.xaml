@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Resources/Converters.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/SpinnerControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/AutoFitTextControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/FilePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/RadioSelector.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/QPasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/IPAddressControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/TimeInput.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/AutoCompleteComboBox.xaml" />
+        
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/QEditBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/QDataGrid.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/PageBar.xaml" />
+        
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Resources/StyleExtensions.xaml" />
+
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

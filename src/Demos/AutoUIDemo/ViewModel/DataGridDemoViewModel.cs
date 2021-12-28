@@ -21,17 +21,17 @@ namespace AutoUIDemo.ViewModel
             }
         }
 
-        [QTime(Title = "上学时间", GroupHeader = "asdf")]
+        [QTime(Title = "上学时间", GroupHeader = "Basic Info")]
         [QRequired]
         public DateTime? Time2 { get; set; }
 
-        [QTextBlock]
+        [QLabel]
         public string Race { get; set; } = "汉族";
 
         [QLabel]
         public string Province { get; set; } = "北京市";
 
-        [QDataGrid(MaxHeight = 400, UseEditBar = true,  IsReadOnly = true)]
+        [QDataGrid(MaxHeight = 400, UseEditBar = true,  IsReadOnly = false)]
         public ObservableCollection<StudentAdvancedItem> Students { get; set; }
     }
 }

@@ -1,0 +1,13 @@
+﻿<qk:QWpfApplication x:Class="DuplicatedKillerDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DuplicatedKillerDemo"
+             xmlns:qk="http://quick.cvbox.cn/2020">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Themes/AutoUI.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</qk:QWpfApplication>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <!-- 模块名[.子模块名1][.XXX].功能描述，Qf开头的为框架内置-->
+    <sys:String x:Key="Qf.MsgBox.DefaultWndTitle">Note</sys:String>
+    <sys:String x:Key="Qf.CustomMsgbox.OkButtonText">OK</sys:String>
+    <sys:String x:Key="Qf.CustomMsgbox.CancelButtonText">Cancel</sys:String>
+    <sys:String x:Key="Qf.CustomMsgbox.YesButtonText">Yes</sys:String>
+    <sys:String x:Key="Qf.CustomMsgbox.NoButtonText">No</sys:String>
+
+    <sys:String x:Key="Qf.QEdit.PropertyRequiredTip">{0} is required</sys:String>
+    <sys:String x:Key="Qf.QEdit.PropertyInvalidTip">{0} is invalid</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.Colon">:</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.TitleTextAdd">Add {0}</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.TitleTextEdit">Edit {0}</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.ButtonTextOk">OK</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.ButtonTextOkAgain">OK &amp; Again</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.ButtonTextCancel">Cancel</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.WithoutSavingWarning">Are you sure to exit without saving?</sys:String>
+    <sys:String x:Key="Qf.QEditWnd.DeleteWarning">Are you sure to delete?</sys:String>
+    
+</ResourceDictionary>

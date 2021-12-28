@@ -15,7 +15,7 @@ namespace EntityFrameworkDemo.ViewModel
         }
 
 
-        [QTextBlock]
+        [QLabel]
         public long Id { get; set; }
 
         [QTextBox]

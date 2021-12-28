@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:ctrl="clr-namespace:AutoUIDemo.Controls"
-        xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AutoUIDemo"
         mc:Ignorable="d"
@@ -12,7 +11,7 @@
         <Style x:Key="TestComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
             <Setter Property="Foreground" Value="Red" />
         </Style>
-        <Style x:Key="TestTextBoxStyle" TargetType="{x:Type hc:TextBox}" BasedOn="{StaticResource {x:Type hc:TextBox}}">
+        <Style x:Key="TestTextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
             <Setter Property="Foreground" Value="Red" />
         </Style>
     </Window.Resources>

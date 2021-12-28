@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:qf="http://wpf.cvbox.cn/2020"
+        xmlns:qk="http://quick.cvbox.cn/2020"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="QuickFramework - 配置演示" Height="450" Width="800">
     <Grid Margin="8">
@@ -17,10 +17,10 @@
             <TextBox Margin="14,0,0,0" Text="{Binding Path=Name,UpdateSourceTrigger=PropertyChanged}" Width="200" />
             <TextBlock Margin="14,0,0,0" Text="地址：" VerticalAlignment="Center" />
             <TextBox Margin="14,0,0,0" Text="{Binding Path=Address,UpdateSourceTrigger=PropertyChanged}" Width="200" />
-            <TextBlock Margin="14,0,0,0" Text="年龄：" VerticalAlignment="Center" qf:TextBoxHelper.InputChars="Number" />
+            <TextBlock Margin="14,0,0,0" Text="年龄：" VerticalAlignment="Center" qk:TextBoxHelper.InputChars="Number" />
             <TextBox Margin="14,0,0,0" Text="{Binding Path=Age}" Width="60" />
             <TextBlock Margin="14,0,0,0" Text="体重：" VerticalAlignment="Center" />
-            <TextBox Margin="14,0,0,0" Text="{Binding Path=Weight}" Width="60"  qf:TextBoxHelper.InputChars="Number,Dot" />
+            <TextBox Margin="14,0,0,0" Text="{Binding Path=Weight}" Width="60"  qk:TextBoxHelper.InputChars="Number,Dot" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,0">
             <Button Content="存储" Click="{DXEvent WriteToLocalStorage()}" Width="80" />

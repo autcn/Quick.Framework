@@ -1,0 +1,78 @@
+﻿<Window x:Class="DuplicatedKillerDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:qk="http://quick.cvbox.cn/2020"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" WindowState="Maximized" Icon="app.ico"
+        Title="QuickFramework - MVVM演示" Height="850" Width="1100">
+    <Grid Margin="9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--第1行-->
+        <Grid Height="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="文件路径：" VerticalAlignment="Center" />
+            <Button Content="查找" Grid.Column="2" Click="{DXEvent Search()}" Width="100" Margin="14,0,0,0"
+                   IsEnabled="{Binding Path=IsSearching,Converter={StaticResource QBoolToReverseValueConverter}}" />
+        </Grid>
+        <TextBox Grid.Row="1" Margin="0,10,0,0" Text="{Binding Path=Paths,UpdateSourceTrigger=PropertyChanged}" Height="80"
+               VerticalContentAlignment="Top" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"  />
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0,6,0,0">
+            <TextBlock Text="{Binding Path=Results.Count}" />
+            <CheckBox Content="允许删除" Margin="20,0,0,0" IsChecked="{Binding Path=AllowDelete,UpdateSourceTrigger=PropertyChanged}" />
+            <CheckBox Content="显示低级" Margin="20,0,0,0" IsChecked="{Binding Path=ShowLow,UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Text="{Binding Path=DeleteFilter,UpdateSourceTrigger=PropertyChanged}" Width="500" Margin="20,0,0,0" />
+            <Button Content="删左侧" Click="{DXEvent Handler='BatchDelete(true)'}" Margin="14,0,0,0" Width="80" />
+            <Button Content="删右侧" Click="{DXEvent Handler='BatchDelete(false)'}" Margin="14,0,0,0" Width="80" />
+        </StackPanel>
+        <qk:QDataGrid Grid.Row="4" Margin="0,10,0,0" ItemsSource="{Binding Path=Results}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="文件名1" ElementStyle="{StaticResource QDataGridCellLeftStyle}" Width="*" Binding="{Binding Path=LeftPath}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="删左侧" Width="60" Click="btnDeleteLeft_Click" />
+                                <Button Content="打开目录" Width="65" Click="btnOpen1_Click" Margin="10,0,0,0" />
+                                <Button Content="打开文件" Width="65" Click="btnOpenFile1_Click" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="80" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Rectangle Width="80" Height="24" Fill="{QBinding Path=Result,ConverterParameter=[Red][Mid:Orange][Low:Blue]}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="文件名2" ElementStyle="{StaticResource QDataGridCellLeftStyle}" Width="*" Binding="{Binding Path=RightPath}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="删右侧" Width="60" Click="btnDeleteRight_Click" />
+                                <Button Content="打开目录" Width="65" Margin="10,0,0,0" Click="btnOpen2_Click" />
+                                <Button Content="打开文件" Width="65" Click="btnOpenFile2_Click" Margin="10,0,0,0" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="文件大小" ElementStyle="{StaticResource QDataGridCellRightStyle}" Width="80" Binding="{Binding Path=SizeDes}" />
+            </DataGrid.Columns>
+        </qk:QDataGrid>
+    </Grid>
+</Window>

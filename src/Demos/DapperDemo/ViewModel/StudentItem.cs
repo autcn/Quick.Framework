@@ -16,7 +16,7 @@ namespace DapperDemo.ViewModel
             Province = "zz";
         }
 
-        [QTextBlock]
+        [QLabel]
         public long Id { get; set; }
 
         [QTextBox]

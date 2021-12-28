@@ -20,7 +20,7 @@ namespace ConvertersDemo
 
         public void Initialize()
         {
-            ConverterDescription = @"提供了以下内置转换器(HandyControl提供的转换器见HC文档，这里不列出)：
+            ConverterDescription = @"提供了以下内置转换器：
 QBoolToReverseValueConverter          bool值反转
 QBoolToCollapsedConverter             bool值转Visibility.Collapsed
 QBoolToHiddenConverter                bool值转Visibility.Hidden

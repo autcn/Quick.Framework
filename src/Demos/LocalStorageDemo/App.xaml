@@ -1,16 +1,7 @@
-﻿<qf:QWpfApplication x:Class="LocalStorageDemo.App"
+﻿<qk:QWpfApplication x:Class="LocalStorageDemo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LocalStorageDemo"
-             xmlns:qf="http://wpf.cvbox.cn/2020">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <!--以下三行必写，HandyControl的皮肤和样式可以换-->
-                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Resources/FrameworkCore.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
-</qf:QWpfApplication>
+             xmlns:qk="http://quick.cvbox.cn/2020">
+
+</qk:QWpfApplication>

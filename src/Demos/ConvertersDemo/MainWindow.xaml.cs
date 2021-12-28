@@ -1,7 +1,6 @@
 ﻿using Quick;
 using System.ComponentModel;
 using System.Windows;
-using HandyControl;
 
 namespace ConvertersDemo
 {

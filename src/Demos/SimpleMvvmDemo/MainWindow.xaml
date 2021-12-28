@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:qk="http://quick.cvbox.cn/2020"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
         Title="QuickFramework - MVVM演示" Height="560" Width="980">
@@ -29,8 +29,8 @@
             </Grid.ColumnDefinitions>
             <TextBlock Text="下载地址：" VerticalAlignment="Center" />
             <!--演示数据验证-->
-            <hc:TextBox Grid.Column="1" Text="{Binding Path=DownloadUrl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" 
-                   Margin="10,0" ShowClearButton="True" x:Name="tbxDownloadUrl" />
+            <TextBox Grid.Column="1" Text="{Binding Path=DownloadUrl,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" 
+                   Margin="10,0" x:Name="tbxDownloadUrl" />
             <!--演示DXEvent-->
             <Button Grid.Column="2" Content="下载图片" Click="{DXEvent Download()}" Width="80" Margin="0"  />
             <!--演示先调用事件处理，然后调用ViewModel-->
@@ -69,6 +69,6 @@
             </Image.RenderTransform>
         </Image>
         <!--演示LoadingBox-->
-        <hc:LoadingBox Grid.RowSpan="9999" Margin="-9"  />
+        <qk:LoadingBox Grid.RowSpan="9999" Margin="-9"  />
     </Grid>
 </Window>

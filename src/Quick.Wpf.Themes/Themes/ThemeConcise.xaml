@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/QWindow.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/Button.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/CheckBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/ComboBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/DataGrid.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/Expander.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/GroupBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/ListBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/Menu.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/PasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/ProgressBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/RadioButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/RepeatButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/ScrollBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/Slider.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/TabControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/TextBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/ToggleButton.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/TreeView.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/DatePicker.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/UserControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/IPAddressControl.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/TimeInput.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/AutoCompleteComboBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/QPasswordBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf.Themes;component/Themes/ThemeConcise/OverwriteKeyStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

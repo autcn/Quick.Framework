@@ -4,9 +4,90 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppDemo"
-        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
-        Title="QuickFramework - 应用程序演示" Height="450" Width="800">
+        xmlns:qk="http://quick.cvbox.cn/2020"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="QuickFramework - 应用程序演示" Height="450" Width="900">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Menu Height="30" Margin="0,0,0,10">
+                <Menu.ItemContainerStyle>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Height" Value="30" />
+                    </Style>
+                </Menu.ItemContainerStyle>
+                <MenuItem Header="文件" Width="80" VerticalAlignment="Stretch" HorizontalContentAlignment="Center">
+                    <MenuItem Header="打开" >
+                        <MenuItem Header="打开" />
+                        <MenuItem Header="关闭" />
+                        <MenuItem Header="退出" />
+                    </MenuItem>
+                    <MenuItem Header="关闭" />
+                    <MenuItem Header="退出" />
+                </MenuItem>
+                <MenuItem Header="编辑" Width="80">
+                    <MenuItem Header="打开" />
+                    <MenuItem Header="关闭" />
+                    <MenuItem Header="退出" />
+                </MenuItem>
+                <MenuItem Header="工具" Width="80" />
+            </Menu>
+            <Grid Grid.Row="1" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <SpaceStackPanel Width="160">
+                    <Button Content="按钮" />
+                    <CheckBox Content="CheckBox" Height="30" />
+                    <TextBox  Text="语文"  />
+                    <ComboBox SelectedIndex="0" >
+                        <ComboBoxItem>语文</ComboBoxItem>
+                        <ComboBoxItem>数学</ComboBoxItem>
+                        <ComboBoxItem>英语</ComboBoxItem>
+                    </ComboBox>
+                    <ComboBox SelectedIndex="0" IsEditable="True"  >
+                        <ComboBoxItem>语文</ComboBoxItem>
+                        <ComboBoxItem>数学</ComboBoxItem>
+                        <ComboBoxItem>英语</ComboBoxItem>
+                    </ComboBox>
+                    <DatePicker VerticalAlignment="Center" />
+                    <ListBox SelectedIndex="0" >
+                        <ListBoxItem>语文</ListBoxItem>
+                        <ListBoxItem>数学</ListBoxItem>
+                        <ListBoxItem>英语</ListBoxItem>
+                    </ListBox>
+                    <TextBlock Text="TextBlock" />
+                </SpaceStackPanel>
+                <SpaceStackPanel Grid.Row="1" Grid.Column="1" Margin="20,0,0,0"  Width="160">
+                    <PasswordBox Height="30" Password="23412341" />
+                    <ProgressBar Height="30" Value="60" />
+                    <RadioButton Height="30" Content="RadioButton" />
+
+                    <ToggleButton  Height="30" Content="Toggle" />
+                    <RepeatButton  Height="30" Content="Repeat" />
+                    <Border Height="30">
+                        <Slider  />
+                    </Border>
+                    
+                </SpaceStackPanel>
+                <DataGrid Grid.Column="2" Margin="10,0,0,0" x:Name="dataGrid">
+                    <DataGrid.Columns>
+                        <DataGridTextColumnEx Header="姓名" Binding="{Binding Path=Name}" />
+                        <DataGridTextColumnEx Header="电话" Binding="{Binding Path=PhoneNumber}" />
+                        <DataGridTextColumnEx Header="年龄" Binding="{Binding Path=Age}" />
+                        <DataGridTextColumnEx Header="生日" Binding="{Binding Path=DateOfBirth}" />
+                        <DataGridTextColumnEx Header="身高" Binding="{Binding Path=Height}" />
+                        <DataGridTextColumnEx Header="体重" Binding="{Binding Path=Weight}" />
+                        <DataGridTextColumnEx Header="家庭住址" Binding="{Binding Path=Address}" Width="*" MinWidth="80" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
     </Grid>
 </Window>

@@ -15,7 +15,7 @@ namespace AutoUIDemo.ViewModel
         [QTextBox]
         public string Name { get; set; }
 
-        [QTextBlock]
+        [QLabel]
         public string Race { get; set; } = "汉族";
 
         [QLabel]
@@ -31,7 +31,7 @@ namespace AutoUIDemo.ViewModel
         [QCheckBox]
         public bool IsChild { get; set; }
 
-        [QToggleButton]
+        [QToggleButton(InputStyleKey = "@AutoUIToggleBtnStyle")]
         public bool IsForeigner { get; set; }
 
         [QDatePicker(Title = "生日")]
@@ -45,7 +45,7 @@ namespace AutoUIDemo.ViewModel
         [QPasswordBox(Title = "密码")]
         public string Password { get; set; }
 
-        [QSlider(Title = "完成度", Min = 0, Max = 100)]
+        [QSlider(Title = "完成度", Min = 0, Max = 100 )]
         public int Percent { get; set; } = 40;
 
         [QTime(Title = "上学时间")]

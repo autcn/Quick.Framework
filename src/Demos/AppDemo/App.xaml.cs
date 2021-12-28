@@ -11,7 +11,6 @@ using System.Windows;
 /*引用库说明及帮助文档：
  Quick.Core 框架核心，基于.net Standard 2.0
  Quick.Wpf  框架WPF核心，基于.net Framework 4.6.1
- Quick.HandyControl UI基础支持，帮助地址：https://handyorg.github.io/handycontrol/quick_start/
  Newtonsoft.Json  基础json转换支持，帮助地址：https://www.newtonsoft.com/json/help/html/Introduction.htm
  Autofac  依赖注入基础支持，帮助地址：https://autofac.readthedocs.io/en/latest/getting-started/index.html
  AutoMapper 对象映射支持, 帮助地址：https://docs.automapper.org/en/stable/index.html
@@ -57,6 +56,7 @@ namespace AppDemo
 
             //从IOC容器中获取Mainwindow
             MainWindow mainWindow = ServiceProvider.GetService<MainWindow>();
+            //Window2 mainWindow = ServiceProvider.GetService<Window2>();
             mainWindow.Show();
         }
     }
@@ -70,11 +70,9 @@ namespace AppDemo
     {
         public override void ConfigureServices(ServiceConfigurationContext context)
         {
-            //添加消息框服务, 不写也可以，默认使用Quick风格
-            context.ServiceBuilder.AddMessageBox(MessageBoxType.Quick);
-
             //注入窗口类
             context.ServiceBuilder.RegisterType<MainWindow>();
+            context.ServiceBuilder.RegisterType<Window2>();
         }
     }
 }

@@ -1,0 +1,230 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--用于标题，表头，边框颜色-->
+    <Color x:Key="qf_color_brand">#171717</Color>
+    <!--用于主窗体,菜单背景色-->
+    <Color x:Key="qf_color_main_bkg">#525252</Color>
+    <!--控件背景-->
+    <Color x:Key="qf_color_ctrl_bkg">#404040</Color>
+    <!--控件背景加深-->
+    <Color x:Key="qf_color_ctrl_bkg_d">#252525</Color>
+    <!--控件禁用时背景色-->
+    <Color x:Key="qf_color_ctrl_bkg_disabled">#707070</Color>
+    <!--Item鼠标停留背景-->
+    <Color x:Key="qf_color_item_bkg_mouse_over">#525252</Color>
+    <!--边框高亮色-->
+    <Color x:Key="qf_color_border_highlight">#AAAAAA</Color>
+
+    <!--装饰色-->
+    <Color x:Key="qf_color_dec">#65C3F1</Color>
+    <!--装饰色浅1-->
+    <Color x:Key="qf_color_dec_l">#79CCEC</Color>
+    <!--装饰色浅2-->
+    <Color x:Key="qf_color_dec_d">#0C8DCF</Color>
+
+    <!--禁用渐变色开始-->
+    <Color x:Key="qf_color_ar_disable_begin">#8A8A8A</Color>
+    <!--禁用渐变色结束-->
+    <Color x:Key="qf_color_ar_disable_end">#6F6F6F</Color>
+
+    <!--文字正常色-->
+    <Color x:Key="qf_color_text">#EEEEEE</Color>
+    <!--文字加深1级-->
+    <Color x:Key="qf_color_text_d">#DDDDDD</Color>
+    <!--文字加深2级-->
+    <Color x:Key="qf_color_text_xd">#C7C7C7</Color>
+    <!--文字选择色-->
+    <Color x:Key="qf_color_text_selected">#DDDDDD</Color>
+    <!--Item选中时文字色-->
+    <Color x:Key="qf_color_text_item_selected">#FFFFFF</Color>
+    <!--Item禁用时文字色-->
+    <Color x:Key="qf_color_text_item_disabled">#CCCCCC</Color>
+    <!--背景为装饰色时的文字颜色-->
+    <Color x:Key="qf_color_text_on_dec">#EEEEEE</Color>
+    <!--背景为装饰色时的禁用文字颜色-->
+    <Color x:Key="qf_color_text_on_dec_disabled">#EEEEEE</Color>
+    <!--错误验证文字颜色-->
+    <Color x:Key="qf_color_text_danger">#95F243</Color>
+
+    <!--滚动条颜色-->
+    <Color x:Key="qf_color_scrollbar">#666666</Color>
+    <!--滚动条高亮-->
+    <Color x:Key="qf_color_scrollbar_highlight">#808080</Color>
+    <!--下拉框按钮颜色-->
+    <Color x:Key="qf_color_combobox_btn">#EEEEEE</Color>
+    <!--DataGrid网格色-->
+    <Color x:Key="qf_color_dg_grid_line">#888888</Color>
+    <!--按钮色-->
+    <Color x:Key="qf_color_btn_bkg">#141414</Color>
+    <!--按钮色浅1-->
+    <Color x:Key="qf_color_btn_bkg_l">#292929</Color>
+    <!--按钮色浅2-->
+    <Color x:Key="qf_color_btn_bkg_xl">#3E3E3E</Color>
+    <!--窗口按钮色-->
+    <Color x:Key="qf_color_wnd_btn_bkg">#222222</Color>
+    <!--窗口按钮色浅1-->
+    <Color x:Key="qf_color_wnd_btn_bkg_l">#393939</Color>
+    <!--窗口按钮色浅2-->
+    <Color x:Key="qf_color_wnd_btn_bkg_xl">#6C6C6C</Color>
+
+    <!--******************************************以下为画刷定义，每个文件Key必须保持不变***************************************-->
+
+    <!--****************通用画刷*******************-->
+
+    <!--主色-->
+    <SolidColorBrush x:Key="qf_br_brand" Color="{StaticResource qf_color_brand}" />
+    <!--标题色-->
+    <SolidColorBrush x:Key="qf_br_header_bkg" Color="{StaticResource qf_color_brand}" />
+    <!--边框-->
+    <SolidColorBrush x:Key="qf_br_border" Color="{StaticResource qf_color_brand}" />
+    <!--边框高亮-->
+    <SolidColorBrush x:Key="qf_br_border_highlight" Color="{StaticResource qf_color_border_highlight}" />
+    <!--主背景色，窗体，菜单-->
+    <SolidColorBrush x:Key="qf_br_main_bkg" Color="{StaticResource qf_color_main_bkg}" />
+    <!--大控件背景-->
+    <SolidColorBrush x:Key="qf_br_ctrl_bkg" Color="{StaticResource qf_color_ctrl_bkg}" />
+    <!--小控件背景-->
+    <SolidColorBrush x:Key="qf_br_ctrl_bkg_d" Color="{StaticResource qf_color_ctrl_bkg_d}" />
+    <!--禁用背景-->
+    <SolidColorBrush x:Key="qf_br_ctrl_bkg_disabled" Color="{StaticResource qf_color_ctrl_bkg_disabled}" />
+    <!--Item鼠标停留背景-->
+    <SolidColorBrush x:Key="qf_br_item_bkg_mouse_over" Color="{StaticResource qf_color_item_bkg_mouse_over}" />
+
+    <!--************修饰色及其渐变色*****************-->
+
+    <!--装饰色-->
+    <SolidColorBrush x:Key="qf_br_dec" Color="{StaticResource qf_color_dec}" />
+    <!--装饰色浅1-->
+    <SolidColorBrush x:Key="qf_br_dec_l" Color="{StaticResource qf_color_dec_l}" />
+    <!--装饰色浅2-->
+    <SolidColorBrush x:Key="qf_br_dec_xl" Color="{StaticResource qf_color_dec_d}" />
+
+    <!--装饰渐变色v, 浅-深-->
+    <LinearGradientBrush x:Key="qf_br_ar_dec_l_d_v" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_dec}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_dec_d}" />
+    </LinearGradientBrush>
+    <!--装饰渐变色h, 浅-深-->
+    <LinearGradientBrush x:Key="qf_br_ar_dec_l_d_h" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Color="{StaticResource qf_color_dec_l}" Offset="0"/>
+        <GradientStop Color="{StaticResource qf_color_dec_d}" Offset="1"/>
+    </LinearGradientBrush>
+
+    <!--装饰渐变色v,0.5分割, 浅-深-->
+    <LinearGradientBrush x:Key="qf_br_ar_dec_l_d_05v" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_dec_l}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_l}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_d}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_dec_d}" />
+    </LinearGradientBrush>
+    <!--装饰渐变色h,0.5分割, 浅-深-->
+    <LinearGradientBrush x:Key="qf_br_ar_dec_l_d_05h" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_dec_l}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_l}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_d}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_dec_d}" />
+    </LinearGradientBrush>
+
+    <!--装饰渐变色v,0.5分割, 深-浅-->
+    <LinearGradientBrush x:Key="qf_br_ar_dec_d_l_05v" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_dec_d}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_d}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_l}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_dec_l}" />
+    </LinearGradientBrush>
+    <!--装饰渐变色h,0.5分割, 深-浅-->
+    <LinearGradientBrush x:Key="qf_br_ar_dec_d_l_05h" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_dec_d}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_d}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_dec_l}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_dec_l}" />
+    </LinearGradientBrush>
+
+    <!--禁用渐变色v-->
+    <LinearGradientBrush x:Key="qf_br_ar_disable_v" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_ar_disable_begin}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_ar_disable_begin}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_ar_disable_end}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_ar_disable_end}" />
+    </LinearGradientBrush>
+    <!--禁用渐变色h-->
+    <LinearGradientBrush x:Key="qf_br_ar_disable_h" StartPoint="0,0" EndPoint="1,0">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_ar_disable_begin}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_ar_disable_begin}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_ar_disable_end}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_ar_disable_end}" />
+    </LinearGradientBrush>
+
+    <!--************文字颜色*****************-->
+
+    <!--正常色-->
+    <SolidColorBrush x:Key="qf_br_text" Color="{StaticResource qf_color_text}" />
+    <!--加深1级-->
+    <SolidColorBrush x:Key="qf_br_text_d" Color="{StaticResource qf_color_text_d}" />
+    <!--加深2级-->
+    <SolidColorBrush x:Key="qf_br_text_xd" Color="{StaticResource qf_color_text_xd}" />
+    <!--选择色-->
+    <SolidColorBrush x:Key="qf_br_text_selected" Color="{StaticResource qf_color_text_selected}" />
+    <!--item禁用时文字色-->
+    <SolidColorBrush x:Key="qf_br_text_item_disabled" Color="{StaticResource qf_color_text_item_disabled}" />
+    <!--item选中时文字色-->
+    <SolidColorBrush x:Key="qf_br_text_item_selected" Color="{StaticResource qf_color_text_item_selected}" />
+    <!--背景为装饰色时的文字颜色-->
+    <SolidColorBrush x:Key="qf_br_text_on_dec" Color="{StaticResource qf_color_text_on_dec}" />
+    <!--背景为装饰色时的禁用文字颜色-->
+    <SolidColorBrush x:Key="qf_br_text_on_dec_disabled" Color="{StaticResource qf_color_text_on_dec_disabled}" />
+    <!--错误验证文字颜色-->
+    <SolidColorBrush x:Key="qf_br_text_danger" Color="{StaticResource qf_color_text_danger}" />
+
+    <!--************特殊控件专有画刷*****************-->
+
+    <!--滚动条颜色-->
+    <SolidColorBrush x:Key="qf_br_scrollbar" Color="{StaticResource qf_color_scrollbar}" />
+    <!--滚动条高亮-->
+    <SolidColorBrush x:Key="qf_br_scrollbar_highlight" Color="{StaticResource qf_color_scrollbar_highlight}" />
+    <!--下拉框按钮颜色-->
+    <SolidColorBrush x:Key="qf_br_combobox_btn" Color="{StaticResource qf_color_combobox_btn}" />
+    <!--DataGrid网格色-->
+    <SolidColorBrush x:Key="qf_br_dg_grid_line" Color="{StaticResource qf_color_dg_grid_line}" />
+    <!--按钮文字颜色-->
+    <SolidColorBrush x:Key="qf_br_text_btn" Color="{StaticResource qf_color_text_on_dec}" />
+    <!--按钮禁用文字颜色-->
+    <SolidColorBrush x:Key="qf_br_text_btn_disabled" Color="{StaticResource qf_color_text_on_dec_disabled}" />
+    <!--Toggle按钮选中时高亮颜色-->
+    <SolidColorBrush x:Key="qf_br_togbtn_highlight" Color="{StaticResource qf_color_dec}" />
+    <!--Switch开关关闭时颜色-->
+    <SolidColorBrush x:Key="qf_br_bk_switch_off" Color="{StaticResource qf_color_ctrl_bkg_d}" />
+    <!--Switch开关MousOver时颜色-->
+    <SolidColorBrush x:Key="qf_br_bk_switch_mouseover" Color="{StaticResource qf_color_item_bkg_mouse_over}" />
+    <!--按钮背景色-->
+    <LinearGradientBrush x:Key="qf_br_ar_btn_bkg_normal" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_btn_bkg_xl}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_btn_bkg_xl}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_btn_bkg}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_btn_bkg}" />
+    </LinearGradientBrush>
+    <!--按钮悬挂鼠标颜色-->
+    <LinearGradientBrush x:Key="qf_br_ar_btn_bkg_mouse_over" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_wnd_btn_bkg_xl}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_wnd_btn_bkg_xl}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_btn_bkg_l}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_btn_bkg_l}" />
+    </LinearGradientBrush>
+    <!--按钮按下-->
+    <LinearGradientBrush x:Key="qf_br_ar_btn_bkg_pressed" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_wnd_btn_bkg_xl}" />
+        <GradientStop Offset="0.625" Color="{StaticResource qf_color_wnd_btn_bkg_xl}" />
+        <GradientStop Offset="0.625" Color="{StaticResource qf_color_btn_bkg_l}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_btn_bkg_l}" />
+    </LinearGradientBrush>
+    <!--按钮禁用-->
+    <LinearGradientBrush x:Key="qf_br_ar_btn_bkg_disabled" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Offset="0" Color="{StaticResource qf_color_ar_disable_begin}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_ar_disable_begin}" />
+        <GradientStop Offset="0.5" Color="{StaticResource qf_color_ar_disable_end}" />
+        <GradientStop Offset="1" Color="{StaticResource qf_color_ar_disable_end}" />
+    </LinearGradientBrush>
+
+
+</ResourceDictionary>

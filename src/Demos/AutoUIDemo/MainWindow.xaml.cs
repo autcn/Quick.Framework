@@ -17,37 +17,38 @@ namespace AutoUIDemo
 
         private void btnEditStudentSimple_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog(_vm.SimpleStudent);
+            QEditWindowHelper.ShowEditDialog(_vm.SimpleStudent, context => context.Content.CloseWarning = true);
         }
 
         private void btnEditStudentAdvance_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog(_vm.AdvancedStudent);
+            QEditWindowHelper.ShowEditDialog(_vm.AdvancedStudent);
         }
 
         private void btnEditStudentMutiLang_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog(_vm.LanguageStudent);
+            QEditWindowHelper.ShowEditDialog(_vm.LanguageStudent);
         }
 
         private void btnTextDemo_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog<TextBoxDemoViewModel>();
+            QEditWindowHelper.ShowEditDialog<TextBoxDemoViewModel>();
         }
 
         private void btnComboBoxDemo_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog<ComboBoxDemoViewModel>();
+            QEditWindowHelper.ShowEditDialog<ComboBoxDemoViewModel>();
         }
 
         private void btnEnumDemo_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog<EnumDemoViewModel>();
+            QEditWindowHelper.ShowEditDialog<EnumDemoViewModel>();
         }
 
         private void btnOtherControlDemo_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog<OtherControlsDemoViewModel>();
+            var wnd = QEditWindowHelper.ShowEditDialog<OtherControlsDemoViewModel>();
+            var val = wnd.Content.EditVM;
         }
 
         private void btnQEditPanelDemo_Click(object sender, RoutedEventArgs e)
@@ -59,7 +60,7 @@ namespace AutoUIDemo
 
         private void btnDataGridDemo_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindow.ShowEditDialog<DataGridDemoViewModel>(context => 
+            QEditWindowHelper.ShowEditDialog<DataGridDemoViewModel>(context => 
             {
                 context.Window.Width = 800;
             });

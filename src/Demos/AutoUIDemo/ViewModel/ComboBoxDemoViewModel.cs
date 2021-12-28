@@ -123,24 +123,24 @@ namespace AutoUIDemo.ViewModel
         public string Friend { get; set; } = "张三丰";
 
 
-        /// <summary>
-        /// 直接绑定string集合
-        /// </summary>
-        [QRadioSelector(ItemsSourcePath = nameof(LocationList))]
-        public string StatusCode2 { get; set; } = "中部";
+        ///// <summary>
+        ///// 直接绑定string集合
+        ///// </summary>
+        //[QRadioSelector(ItemsSourcePath = nameof(LocationList))]
+        //public string StatusCode2 { get; set; } = "中部";
 
 
-        /// <summary>
-        /// 绑定对象集合，绑定对象
-        /// </summary>
-        [QRadioSelector(ItemsSourcePath = nameof(StatusList), ContentMemberPath = nameof(StatusItem.Name))]
-        public StatusItem Status { get; set; }
+        ///// <summary>
+        ///// 绑定对象集合，绑定对象
+        ///// </summary>
+        //[QRadioSelector(ItemsSourcePath = nameof(StatusList), ContentMemberPath = nameof(StatusItem.Name))]
+        //public StatusItem Status { get; set; }
 
-        /// <summary>
-        /// 绑定对象集合，绑定值
-        /// </summary>
-        [QRadioSelector(ItemsSourcePath = nameof(StatusList), ContentMemberPath = nameof(StatusItem.Name),
-                          BindType = RadioSelectorBindType.Value, SelectedValuePath = nameof(StatusItem.Code))]
-        public string StatusCode3 { get; set; } = "Disabled";
+        ///// <summary>
+        ///// 绑定对象集合，绑定值
+        ///// </summary>
+        //[QRadioSelector(ItemsSourcePath = nameof(StatusList), ContentMemberPath = nameof(StatusItem.Name),
+        //                  BindType = RadioSelectorBindType.Value, SelectedValuePath = nameof(StatusItem.Code))]
+        //public string StatusCode3 { get; set; } = "Disabled";
     }
 }

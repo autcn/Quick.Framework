@@ -1,0 +1,44 @@
+﻿<qk:QWindow x:Class="QuickThemeDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:qk="http://quick.cvbox.cn/2020"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" 
+        Title="{DynamicResource App.MainWindow.Title}" Height="560" Width="980">
+
+    <Grid Margin="9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Menu Margin="0,0,0,0" BorderThickness="1" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <MenuItem Header="语言(Language)" HorizontalAlignment="Left" Height="30">
+                <MenuItem Header="简体中文(中国)" Click="{DXEvent SetCulture(`zh-CN`)}"  Height="30"/>
+                <MenuItem Header="英语(美国)" Click="{DXEvent SetCulture(`en-US`)}"  Height="30" />
+            </MenuItem>
+        </Menu>
+        <HeaderedContentControl Header="基础部分" Grid.Row="1">
+            <SpaceStackPanel Orientation="Horizontal" Height="32" Margin="0,6,0,0">
+                <Button Content="编辑学生信息(简易)" Click="btnEditStudentSimple_Click" />
+                <Button Content="编辑学生信息(高级)" Click="btnEditStudentAdvance_Click" />
+                <Button Content="编辑学生信息(多语言)" Click="btnEditStudentMutiLang_Click" />
+                <Button Content="QEditPanel" Click="btnQEditPanelDemo_Click" />
+            </SpaceStackPanel>
+        </HeaderedContentControl>
+        <HeaderedContentControl Header="控件专题" Grid.Row="2" Margin="0,10,0,0">
+            <SpaceStackPanel Orientation="Horizontal" Height="32" Margin="0,6,0,0">
+                <Button Width="100" Content="编辑框" Click="btnTextDemo_Click"
+                       qk:BorderElement.CornerRadius="3" 
+                       qk:IconElement.Geometry="M220.288 711.296l235.84-42.4-147.84-179.104-88 221.504z m616-354.304L688.192 178.24l-355.008 291.2 148.224 178.784 354.88-291.2z m89.696-129.28l-92.576-111.904c-15.104-18.4-43.712-20.32-63.68-4.224l-53.92 44 148.096 179.104 53.888-44c19.616-16.096 23.296-44.576 8.192-62.976z m-35.392 317.376c-26.592 0-48.096 21.504-48.096 48.128v132a72.384 72.384 0 0 1-72.384 72.384H259.616a72.384 72.384 0 0 1-72.416-72.384V249.376a72.384 72.384 0 0 1 72.416-72.384h49.6c26.56 0 48.096-21.504 48.096-48.096 0-26.592-21.504-48.096-48.128-48.096h-49.6a168.512 168.512 0 0 0-168.48 168.512v475.776c0 93.12 75.52 168.512 168.512 168.512h510.496c93.088 0 168.48-75.52 168.48-168.512v-132a48 48 0 0 0-48-48z" />
+                <Button Width="100" Content="组合框" Click="btnComboBoxDemo_Click" />
+                <Button Width="100" Content="枚举" Click="btnEnumDemo_Click" />
+                <Button Width="100" Content="DataGrid" Click="btnDataGridDemo_Click" />
+                <Button Width="100" Content="其他控件" Click="btnOtherControlDemo_Click" />
+            </SpaceStackPanel>
+        </HeaderedContentControl>
+    </Grid>
+</qk:QWindow>

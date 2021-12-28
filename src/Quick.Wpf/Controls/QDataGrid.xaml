@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:qk="clr-namespace:Quick">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Themes/Lite.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style TargetType="{x:Type qk:QDataGrid}" BasedOn="{StaticResource {x:Type DataGrid}}">
+        <Setter Property="AutoGenerateColumns" Value="True" />
+    </Style>
+
+</ResourceDictionary>

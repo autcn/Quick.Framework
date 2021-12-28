@@ -1,0 +1,66 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Quick;assembly=Quick.Wpf"
+                    xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore">
+
+    <Style TargetType="{x:Type local:TimeInput}">
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Width" Value="80" />
+        <Setter Property="Background" Value="{DynamicResource qf_br_ctrl_bkg_d}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:TimeInput}">
+                    <Border x:Name="border" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                           >
+                        <Grid x:Name="grdContainer">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="0" x:Name="PART_TextBox1" IsReadOnly="{TemplateBinding IsReadOnly}" 
+                                   MaxLength="2" BorderThickness="0" Background="Transparent" Padding="0" VerticalContentAlignment="Center" 
+                                    HorizontalContentAlignment="Center"  input:InputMethod.IsInputMethodEnabled="False" />
+                            <TextBlock VerticalAlignment="Center" Padding="0" Grid.Column="1" Text=":" 
+                                       Foreground="{Binding ElementName=PART_TextBox1,Path=Foreground}" />
+                            <TextBox Grid.Column="2" Tag="2"  x:Name="PART_TextBox2"  IsReadOnly="{TemplateBinding IsReadOnly}" 
+                                    MaxLength="2" BorderThickness="0" Background="Transparent" Padding="0" VerticalContentAlignment="Center" 
+                                    HorizontalContentAlignment="Center"  input:InputMethod.IsInputMethodEnabled="False" />
+
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="{DynamicResource qf_br_ctrl_bkg_disabled}" />
+                            <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="Validation.HasError" Value="true" />
+                                <Condition Property="IsEnabled" Value="true" />
+                                <Condition Property="IsMouseOver" Value="false" />
+                                <Condition Property="IsFocused" Value="false" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="BorderBrush" Value="{DynamicResource qf_br_text_danger}" />
+                        </MultiTrigger>
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border_highlight}" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border_highlight}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

@@ -1,29 +1,27 @@
-﻿<hc:Window x:Class="MultiLanguageDemo.MainWindow"
+﻿<Window x:Class="MultiLanguageDemo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:local="clr-namespace:MultiLanguageDemo" Icon="images\app.ico"
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         Title="{DynamicResource App.MainWindow.Title}" Height="450" Width="1000">
-    <hc:Window.NonClientAreaContent>
+    <!--为了使用自动UI机制，用QEditPanel-->
+    <QEditPanel Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
         <Menu Margin="30,0,0,0" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center">
             <MenuItem Header="语言(Language)" HorizontalAlignment="Left">
                 <MenuItem Header="简体中文(中国)" Click="{DXEvent SetLanguage(`zh-CN`)}" />
                 <MenuItem Header="英语(美国)" Click="{DXEvent SetLanguage(`en-US`)}" />
             </MenuItem>
         </Menu>
-    </hc:Window.NonClientAreaContent>
-    <!--为了使用自动UI机制，用QEditPanel-->
-    <QEditPanel Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-        </Grid.RowDefinitions>
-        <TextBlock Text="{DynamicResource App.Mainwindow.AppComment}" FontSize="30" TextWrapping="Wrap" />
+        <TextBlock Grid.Row="1" Text="{DynamicResource App.Mainwindow.AppComment}" FontSize="30" TextWrapping="Wrap" />
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" Height="40" Margin="0,10,0,0">
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Height="40" Margin="0,10,0,0">
             <Button Content="{DynamicResource App.Mainwindow.GetLanguageButtonText}" Margin="0,0,0,0" FontSize="16" Height="40" Padding="20,0"
                    Click="{DXEvent GetCurrentLanguage()}" />
             <TextBlock Text="{DynamicResource App.MainWindow.OccupationTitle}" VerticalAlignment="Center" FontSize="16" Margin="20,0,0,0" />
@@ -33,4 +31,4 @@
                    Click="{DXEvent GetMyOccupation()}" />
         </StackPanel>
     </QEditPanel>
-</hc:Window>
+</Window>

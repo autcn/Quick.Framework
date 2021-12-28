@@ -1,0 +1,89 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cnv="clr-namespace:Quick"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <cnv:FileToBitmapImageConverter x:Key="QFileToBitmapImageConverter" />
+    <cnv:UniversalConverter x:Key="QUniversalConverter" />
+    <cnv:BooleanToValueConverter x:Key="QBoolToReverseValueConverter">
+        <cnv:BooleanToValueConverter.TrueValue>
+            <sys:Boolean>False</sys:Boolean>
+        </cnv:BooleanToValueConverter.TrueValue>
+        <cnv:BooleanToValueConverter.FalseValue>
+            <sys:Boolean>True</sys:Boolean>
+        </cnv:BooleanToValueConverter.FalseValue>
+    </cnv:BooleanToValueConverter>
+
+    <cnv:BooleanToValueConverter x:Key="QBoolToCollapsedConverter">
+        <cnv:BooleanToValueConverter.TrueValue>
+            <Visibility>Collapsed</Visibility>
+        </cnv:BooleanToValueConverter.TrueValue>
+        <cnv:BooleanToValueConverter.FalseValue>
+            <Visibility>Visible</Visibility>
+        </cnv:BooleanToValueConverter.FalseValue>
+    </cnv:BooleanToValueConverter>
+
+    <cnv:BooleanToValueConverter x:Key="QBoolToHiddenConverter">
+        <cnv:BooleanToValueConverter.TrueValue>
+            <Visibility>Hidden</Visibility>
+        </cnv:BooleanToValueConverter.TrueValue>
+        <cnv:BooleanToValueConverter.FalseValue>
+            <Visibility>Visible</Visibility>
+        </cnv:BooleanToValueConverter.FalseValue>
+    </cnv:BooleanToValueConverter>
+
+    <cnv:BooleanToValueConverter x:Key="QBoolToVisibleConverter">
+        <cnv:BooleanToValueConverter.TrueValue>
+            <Visibility>Visible</Visibility>
+        </cnv:BooleanToValueConverter.TrueValue>
+        <cnv:BooleanToValueConverter.FalseValue>
+            <Visibility>Collapsed</Visibility>
+        </cnv:BooleanToValueConverter.FalseValue>
+    </cnv:BooleanToValueConverter>
+
+    <cnv:BooleanToValueConverter x:Key="QBoolToVisibleElseHiddenConverter">
+        <cnv:BooleanToValueConverter.TrueValue>
+            <Visibility>Visible</Visibility>
+        </cnv:BooleanToValueConverter.TrueValue>
+        <cnv:BooleanToValueConverter.FalseValue>
+            <Visibility>Hidden</Visibility>
+        </cnv:BooleanToValueConverter.FalseValue>
+    </cnv:BooleanToValueConverter>
+
+    <cnv:NullableToValueConverter x:Key="QNullableToTrueConverter">
+        <cnv:NullableToValueConverter.NullValue>
+            <sys:Boolean>True</sys:Boolean>
+        </cnv:NullableToValueConverter.NullValue>
+        <cnv:NullableToValueConverter.NoNullValue>
+            <sys:Boolean>False</sys:Boolean>
+        </cnv:NullableToValueConverter.NoNullValue>
+    </cnv:NullableToValueConverter>
+
+    <cnv:NullableToValueConverter x:Key="QNullableToFalseConverter">
+        <cnv:NullableToValueConverter.NullValue>
+            <sys:Boolean>False</sys:Boolean>
+        </cnv:NullableToValueConverter.NullValue>
+        <cnv:NullableToValueConverter.NoNullValue>
+            <sys:Boolean>True</sys:Boolean>
+        </cnv:NullableToValueConverter.NoNullValue>
+    </cnv:NullableToValueConverter>
+
+    <cnv:NullableToValueConverter x:Key="QNullableToCollapsedConverter">
+        <cnv:NullableToValueConverter.NullValue>
+            <Visibility>Collapsed</Visibility>
+        </cnv:NullableToValueConverter.NullValue>
+        <cnv:NullableToValueConverter.NoNullValue>
+            <Visibility>Visible</Visibility>
+        </cnv:NullableToValueConverter.NoNullValue>
+    </cnv:NullableToValueConverter>
+
+    <cnv:NullableToValueConverter x:Key="QNullableToHiddenConverter">
+        <cnv:NullableToValueConverter.NullValue>
+            <Visibility>Hidden</Visibility>
+        </cnv:NullableToValueConverter.NullValue>
+        <cnv:NullableToValueConverter.NoNullValue>
+            <Visibility>Visible</Visibility>
+        </cnv:NullableToValueConverter.NoNullValue>
+    </cnv:NullableToValueConverter>
+
+</ResourceDictionary>
