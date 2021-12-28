@@ -8,7 +8,7 @@
     <icon>icon.png</icon>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <description>A simple framework for WPF development</description>
+    <description>The themes library for quick framework.</description>
     <releaseNotes>The alpha version.</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>quick wpf</tags>
