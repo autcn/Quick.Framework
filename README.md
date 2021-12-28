@@ -1,6 +1,8 @@
 **Nuget包地址：**
 https://www.nuget.org/packages/QuickFramework.Wpf/
 
+用vs的nuget搜索包时，请勾选“包括预发行版本”，搜索关键字：QuickFramework.Wpf
+
 **QQ交流群：196554374**
 
 注：编译源码需要vs2019或以上版本，当第一次编译提示错误时，在解决方案上右键，点击“清理解决方案”，然后再次编译，即可成功
