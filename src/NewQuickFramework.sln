@@ -45,6 +45,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialThemeDemo", "Demos\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialThemeDemo2", "Demos\MaterialThemeDemo2\MaterialThemeDemo2.csproj", "{FE0B18E1-6DB9-4BD8-A047-8B5681198A39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutDemo", "Demos\LayoutDemo\LayoutDemo.csproj", "{AC15A043-12AD-4E5F-B771-90348F526E10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,10 @@ Global
 		{FE0B18E1-6DB9-4BD8-A047-8B5681198A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE0B18E1-6DB9-4BD8-A047-8B5681198A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE0B18E1-6DB9-4BD8-A047-8B5681198A39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC15A043-12AD-4E5F-B771-90348F526E10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC15A043-12AD-4E5F-B771-90348F526E10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC15A043-12AD-4E5F-B771-90348F526E10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC15A043-12AD-4E5F-B771-90348F526E10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,6 +158,7 @@ Global
 		{E6899CB5-D38A-4029-9362-E85F4998FA45} = {A5B5B94D-67AE-4A02-8DC6-A601113394A6}
 		{39B7EB58-9791-4A8B-A10F-9713880E6C03} = {A5B5B94D-67AE-4A02-8DC6-A601113394A6}
 		{FE0B18E1-6DB9-4BD8-A047-8B5681198A39} = {A5B5B94D-67AE-4A02-8DC6-A601113394A6}
+		{AC15A043-12AD-4E5F-B771-90348F526E10} = {A5B5B94D-67AE-4A02-8DC6-A601113394A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92828645-0AC0-44F3-84A8-D82916143943}
