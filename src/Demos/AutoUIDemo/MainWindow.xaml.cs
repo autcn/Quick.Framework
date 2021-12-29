@@ -17,7 +17,7 @@ namespace AutoUIDemo
 
         private void btnEditStudentSimple_Click(object sender, RoutedEventArgs e)
         {
-            QEditWindowHelper.ShowEditDialog(_vm.SimpleStudent, context => context.Content.CloseWarning = true);
+            var wnd = QEditWindowHelper.ShowEditDialog(_vm.SimpleStudent, context => context.Content.CloseWarning = true);
         }
 
         private void btnEditStudentAdvance_Click(object sender, RoutedEventArgs e)

@@ -25,15 +25,20 @@
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Viewbox Margin="0,0,3,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
+                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
                                 <Path Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
                                       Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
                             </Viewbox>
-                            <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </StackPanel>
 
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="viewBox" Property="Margin" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -67,14 +72,14 @@
         </Style.Triggers>
     </Style>
 
-    <Style x:Key="ToggleSwitchStyle" TargetType="ToggleButton">
+    <Style x:Key="QToggleSwitchStyle" TargetType="ToggleButton">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn}" />
         <Setter Property="Background" Value="{DynamicResource qf_br_bk_switch_off}" />
         <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
         <Setter Property="qk:SwitchElement.CheckedBrush" Value="{DynamicResource qf_br_text_btn}" />
-        <Setter Property="Padding" Value="1" />
+        <Setter Property="Padding" Value="2" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Width" Value="46" />
@@ -85,7 +90,7 @@
                     <Border x:Name="bd" CornerRadius="{TemplateBinding qk:BorderElement.CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}"  
                             BorderThickness="{TemplateBinding BorderThickness}" 
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
-                        <Ellipse x:Name="PART_Thumb" Fill="{TemplateBinding Foreground}" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}"
+                        <Ellipse x:Name="PART_Thumb" Fill="{TemplateBinding Foreground}" HorizontalAlignment="Left" 
                                         Width="{Binding RelativeSource={RelativeSource self}, Path=ActualHeight}" />
                     </Border>
                     <ControlTemplate.Triggers>
@@ -102,6 +107,131 @@
                 <Setter Property="Background" Value="{DynamicResource qf_br_bk_switch_mouseover}" />
             </Trigger>
         </Style.Triggers>
+    </Style>
+
+    <Style x:Key="QToggleBtnSwitchIconStyle" TargetType="ToggleButton">
+       <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn}" />
+        <Setter Property="Background" Value="{DynamicResource qf_br_ar_btn_bkg_normal}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
+        <Setter Property="qk:SwitchElement.CheckedBrush" Value="{DynamicResource qf_br_text_btn}" />
+        <Setter Property="Padding" Value="3,3" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="qk:IconElement.Width" Value="1024" />
+        <Setter Property="qk:IconElement.Height" Value="1024" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="bd" CornerRadius="{TemplateBinding qk:BorderElement.CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}"  
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
+                                <Grid>
+                                    <Path x:Name="uncheckedPath" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
+                                    <Path x:Name="checkedPath" Data="{TemplateBinding qk:SwitchElement.GeometryChecked}" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" Visibility="Collapsed" />
+                                </Grid>
+                                
+                            </Viewbox>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </StackPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="viewBox" Property="Margin" Value="0" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="uncheckedPath" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="checkedPath" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Background" Value="{DynamicResource qf_br_brand}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
+                <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource self},Path=(qk:SwitchElement.CheckedBrush)}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Background" Value="{DynamicResource qf_br_ar_btn_bkg_mouse_over}" />
+                    <!--<Setter Property="BorderBrush" Value="{DynamicResource qf_br_border_highlight}" />-->
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsChecked" Value="False" />
+                    <Condition Property="IsEnabled" Value="False" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Background" Value="{DynamicResource qf_br_ar_btn_bkg_disabled}"/>
+                    <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn_disabled}"/>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="QToggleSwitchIconStyle" TargetType="ToggleButton">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="qk:SwitchElement.CheckedBrush" Value="{DynamicResource qf_br_text_btn}" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="qk:IconElement.Width" Value="1024" />
+        <Setter Property="qk:IconElement.Height" Value="1024" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="bd" CornerRadius="{TemplateBinding qk:BorderElement.CornerRadius}" BorderBrush="{TemplateBinding BorderBrush}"  
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
+                                <Grid>
+                                    <Path x:Name="uncheckedPath" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
+                                    <Path x:Name="checkedPath" Data="{TemplateBinding qk:SwitchElement.GeometryChecked}" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" Visibility="Collapsed" />
+                                </Grid>
+
+                            </Viewbox>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </StackPanel>
+
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource self},Path=(qk:SwitchElement.CheckedBrush)}" />
+                        </Trigger>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="viewBox" Property="Margin" Value="0" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="uncheckedPath" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="checkedPath" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 </ResourceDictionary>

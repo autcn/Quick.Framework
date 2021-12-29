@@ -17,7 +17,7 @@ namespace Quick
             tgButton.SetBinding(ToggleButton.IsCheckedProperty, CreateBinding(qEditContext));
             tgButton.IsHitTestVisible = !attr.IsReadOnly;
             tgButton.HorizontalAlignment = HorizontalAlignment.Left;
-            tgButton.Style = (Style)Application.Current.TryFindResource("ToggleSwitchStyle");
+            tgButton.Style = (Style)Application.Current.TryFindResource("QToggleSwitchStyle");
             return tgButton;
         }
     }

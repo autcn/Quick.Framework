@@ -31,5 +31,6 @@ namespace Quick
 
         public static double GetHeight(DependencyObject element)
             => (double)element.GetValue(HeightProperty);
+
     }
 }

@@ -61,9 +61,6 @@ namespace MaterialThemeDemo
                 options.AddFile(this, "Lang.xaml");
             });
 
-            //添加自定义控件Creator
-            context.ServiceBuilder.AddUniversalEditCreator();
-
             //以下服务及其子类都被注入为短暂实例
             Type[] transientBaseTypes = { typeof(Window),
                                  typeof(QBindableBase) };

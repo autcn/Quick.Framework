@@ -5,25 +5,13 @@ using System.Windows.Media;
 
 namespace Quick
 {
-    internal class ObjectToGeometryConverter : IValueConverter
+    internal class IsNullConverter : IValueConverter
     {
-        public static ObjectToGeometryConverter Default { get; } = new ObjectToGeometryConverter();
+        public static IsNullConverter Default { get; } = new IsNullConverter();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value == null)
-            {
-                return null;
-            }
-            string str = value.ToString();
-            try
-            {
-                return Geometry.Parse(str);
-            }
-            catch
-            {
-                return null;
-            }
+            return value == null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

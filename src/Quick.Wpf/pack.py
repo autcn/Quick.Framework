@@ -61,8 +61,8 @@ def unzip_file(zipFileName, unzipToDir):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-Configuration','--Configuration', default='Release')
-parser.add_argument('-Version','--Version', default='1.0.2-beta.3')
-parser.add_argument('-CoreVersion','--CoreVersion', default='1.0.2-beta.3')
+parser.add_argument('-Version','--Version', default='1.0.4-beta.4')
+parser.add_argument('-CoreVersion','--CoreVersion', default='1.0.4-beta.4')
 args = parser.parse_args()
 
 Version = args.Version

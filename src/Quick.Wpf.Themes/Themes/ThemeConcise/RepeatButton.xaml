@@ -30,14 +30,19 @@
                             Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="True">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Viewbox Margin="0,0,3,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
+                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
                                 <Path Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
                                       Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
                             </Viewbox>
-                            <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </StackPanel>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="viewBox" Property="Margin" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

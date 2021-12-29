@@ -11,7 +11,7 @@ namespace Quick
         {
             Configure<QEditWindowOptions>(options => options.WindowType = typeof(QWindow));
             context.ServiceBuilder.RegisterType<QMessageBox>().As<IMessageBox>();
-            context.ServiceBuilder.AddUniversalEditCreator();
+            context.ServiceBuilder.AddUniversalEditCreator(typeof(QWpfThemesModule).Assembly);
         }
 
         public override void OnApplicationInitialization(ApplicationInitializationContext context)
