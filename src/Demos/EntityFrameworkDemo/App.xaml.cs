@@ -69,7 +69,7 @@ namespace EntityFrameworkDemo
             Type[] singletonTypes = { typeof(MainWindow),
                                       typeof(MainWindowViewModel) };
 
-            context.ServiceBuilder.RegisterGeneral(transientBaseTypes, singletonTypes);
+            context.ServiceBuilder.RegisterGeneral(ThisAssembly, transientBaseTypes, singletonTypes);
         }
     }
 }

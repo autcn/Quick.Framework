@@ -18,7 +18,7 @@ namespace Quick
             context.ServiceBuilder.AddMessageBox();
 
             //添加通用UI渲染器
-            context.ServiceBuilder.AddUniversalEditCreator(typeof(QWpfModule).Assembly);
+            context.ServiceBuilder.AddUniversalEditCreator(ThisAssembly);
 
             //添加消息处理器
             context.ServiceBuilder.Register(p => Messenger.Default).As<IMessenger>().SingleInstance();

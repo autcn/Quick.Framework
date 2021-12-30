@@ -5,6 +5,7 @@ namespace Quick
 {
     public abstract class QModule : IQModule
     {
+        public Assembly ThisAssembly => GetType().Assembly;
         protected internal bool SkipAutoServiceRegistration { get; protected set; }
 
         protected internal ServiceConfigurationContext ServiceConfigurationContext

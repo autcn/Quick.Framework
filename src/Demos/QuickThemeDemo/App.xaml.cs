@@ -63,7 +63,7 @@ namespace QuickThemeDemo
             });
 
             //添加自定义控件Creator
-            context.ServiceBuilder.AddUniversalEditCreator(typeof(AppModule).Assembly);
+            context.ServiceBuilder.AddUniversalEditCreator(ThisAssembly);
 
             //以下服务及其子类都被注入为短暂实例
             Type[] transientBaseTypes = { typeof(Window),
@@ -73,7 +73,7 @@ namespace QuickThemeDemo
             Type[] singletonTypes = { typeof(MainWindow),
                                       typeof(MainWindowViewModel) };
 
-            context.ServiceBuilder.RegisterGeneral(transientBaseTypes, singletonTypes);
+            context.ServiceBuilder.RegisterGeneral(ThisAssembly, transientBaseTypes, singletonTypes);
         }
     }
 }
