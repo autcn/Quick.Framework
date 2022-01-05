@@ -111,6 +111,7 @@ namespace SimpleMvvmDemo.ViewModel
                         MsgBox.Show(ex.Message);
                     }
                 }
+                Toast.Show("下载成功！");
             }
             else
             {

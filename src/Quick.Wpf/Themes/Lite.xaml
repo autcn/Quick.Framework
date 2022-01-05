@@ -3,6 +3,7 @@
                     xmlns:qk="clr-namespace:Quick">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/LoadingBox.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Quick.Wpf;component/Controls/Toast.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">

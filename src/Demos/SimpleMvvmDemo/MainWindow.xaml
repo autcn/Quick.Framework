@@ -70,5 +70,7 @@
         </Image>
         <!--演示LoadingBox-->
         <qk:LoadingBox Grid.RowSpan="9999" Margin="-9"  />
+        <!--演示Toast-->
+        <qk:Toast Grid.RowSpan="9999" />
     </Grid>
 </Window>

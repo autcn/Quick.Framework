@@ -102,6 +102,7 @@
     <Compile Include="Controls\Attatched\InputCharsModels.cs" />
     <Compile Include="Controls\Attatched\PasswordBoxHelper.cs" />
     <Compile Include="Controls\DataGridTextColumnEx.cs" />
+    <Compile Include="Controls\Toast.cs" />
     <Compile Include="Controls\LoadingBox.cs" />
     <Compile Include="Controls\PageBar.cs" />
     <Compile Include="Controls\QEditWindowContent.xaml.cs">
@@ -132,6 +133,7 @@
     <Compile Include="Mvvm\IEditableObject.cs" />
     <Compile Include="Mvvm\QEditObjectHelper.cs" />
     <Compile Include="Mvvm\QValidatableBase.cs" />
+    <Compile Include="Mvvm\RelayCommand.cs" />
     <Compile Include="Mvvm\Validation\IValidatableObject.cs" />
     <Compile Include="Mvvm\QBindableAppBase.cs" />
     <Compile Include="Mvvm\QEditBindableBase.cs" />
@@ -251,6 +253,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\IPAddressControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Toast.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
