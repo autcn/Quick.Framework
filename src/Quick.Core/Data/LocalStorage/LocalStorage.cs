@@ -51,14 +51,17 @@ namespace Quick
             get => (_storage[key] as JValue).Value;
             set
             {
-                if (!_storage.ContainsKey(key))
+                lock(_storage)
                 {
-                    JValue jValue = new JValue(value);
-                    _storage[key] = jValue;
-                }
-                else
-                {
-                    (_storage[key] as JValue).Value = value;
+                    if (!_storage.ContainsKey(key))
+                    {
+                        JValue jValue = new JValue(value);
+                        _storage[key] = jValue;
+                    }
+                    else
+                    {
+                        (_storage[key] as JValue).Value = value;
+                    }
                 }
                 SaveAsync();
             }
@@ -130,14 +133,17 @@ namespace Quick
 
         public void Save()
         {
-            if (_storageInConfig)
+            lock(_storage)
             {
-                _qConfiguration.Save();
-            }
-            else
-            {
-                string strJson = JsonConvert.SerializeObject(_storage, Formatting.Indented);
-                File.WriteAllText(_filePath, strJson, Encoding.UTF8);
+                if (_storageInConfig)
+                {
+                    _qConfiguration.Save();
+                }
+                else
+                {
+                    string strJson = JsonConvert.SerializeObject(_storage, Formatting.Indented);
+                    File.WriteAllText(_filePath, strJson, Encoding.UTF8);
+                }
             }
         }
 

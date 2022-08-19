@@ -53,7 +53,6 @@ namespace System.Threading.Tasks.Schedulers
             if (!_isRunning)
             {
                 Run();
-                System.Diagnostics.Debug.WriteLine("zzzzzzzzzzzzzzzzzzzzzzzzzzz");
             }
             _queue.Add(task);
         }
@@ -92,7 +91,6 @@ namespace System.Threading.Tasks.Schedulers
                         }
                         catch { return; }
                         TryExecuteTask(task);
-                        Thread.Sleep(1000);
                     }
                 });
                 _workThreads.Add(workThread);
@@ -119,17 +117,4 @@ namespace System.Threading.Tasks.Schedulers
 
         #endregion
     }
-
-    //public static class MyTask
-    //{
-    //    public static Task Run(Action action)
-    //    {
-    //        return Task.Factory.StartNew(action, CancellationToken.None, TaskCreationOptions.None, ThreadPoolTaskScheduler.Default);
-    //    }
-
-    //    public static Task<TResult> Run<TResult>(Func<TResult> func)
-    //    {
-    //        return Task.Factory.StartNew(func, CancellationToken.None, TaskCreationOptions.None, ThreadPoolTaskScheduler.Default);
-    //    }
-    //}
 }

@@ -8,6 +8,8 @@ namespace SimpleMvvmDemo.ViewModel
         #region Bindable Properties
 
         [Required(ErrorMessage = "用户名不能为空！")]
+        [RegularExpression("[a-zA-Z0-9]", ErrorMessage = "用户名非法")]
+        [MinLength(4, ErrorMessage = "用户名长度必须>=4")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "密码不能为空！")]
@@ -18,6 +20,7 @@ namespace SimpleMvvmDemo.ViewModel
         #endregion
 
         #region Public functions
+
         public bool Login()
         {
             Validate();

@@ -18,6 +18,12 @@ namespace System
             return sb.ToString();
         }
 
+        public static string ToUtf8String(this byte[] data)
+        {
+            int offset = data.Length >= 3 && data[0] == 0xEF && data[1] == 0xBB && data[2] == 0xBF ? 3 : 0;
+            return Encoding.UTF8.GetString(data, offset, data.Length - offset);
+        }
+
         public static string ToMd5UpperString(this byte[] inputBytes)
         {
             using (var md5 = MD5.Create())
