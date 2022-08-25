@@ -20,7 +20,7 @@ namespace System.Windows.Controls
             IEnumerable<UIElement> controls = InternalChildren.Cast<UIElement>();
             CalcStarInfo info = new CalcStarInfo();
             //先计算star的高度
-            double totalSpaceLen = (InternalChildren.Count - 1) * Spacing;
+            double totalSpaceLen = (controls.Where(p => p.Visibility != Visibility.Collapsed).Count() - 1) * Spacing;
             if (totalSpaceLen < 0)
             {
                 totalSpaceLen = 0;
@@ -39,7 +39,6 @@ namespace System.Windows.Controls
             }
             else
             {
-
                 info.OtherTotalLen = controls.Where(p => !GetWeight(p).IsStar).Sum(p => p.DesiredSize.Height);
                 info.StarCount = controls.Where(p => GetWeight(p).IsStar).Sum(p => GetWeight(p).Value);
                 info.StarAvaLen = arrangeSize.Height - info.OtherTotalLen - totalSpaceLen;
@@ -183,7 +182,7 @@ namespace System.Windows.Controls
                     rcChild.Width = previousChildSize;
                     rcChild.Height = Math.Max(arrangeSize.Height, child.DesiredSize.Height);
                     child.Arrange(rcChild);
-                    rcChild.X += previousChildSize + Spacing;
+                    rcChild.X += previousChildSize + (child.Visibility != Visibility.Collapsed ? Spacing : 0);
                     rcChild.X = Math.Min(rcChild.X, arrangeSize.Width);
                 }
             }
@@ -205,7 +204,7 @@ namespace System.Windows.Controls
                     rcChild.Height = previousChildSize;
                     rcChild.Width = Math.Max(arrangeSize.Width, child.DesiredSize.Width);
                     child.Arrange(rcChild);
-                    rcChild.Y += previousChildSize + Spacing;
+                    rcChild.Y += previousChildSize + (child.Visibility != Visibility.Collapsed ? Spacing : 0);
                     rcChild.Y = Math.Min(rcChild.Y, arrangeSize.Height);
                 }
             }
