@@ -14,27 +14,24 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="3,3" />
+        <Setter Property="Padding" Value="8,3" />
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="qk:IconElement.Width" Value="1024" />
-        <Setter Property="qk:IconElement.Height" Value="1024" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Name="PART_Border" CornerRadius="{TemplateBinding qk:BorderElement.CornerRadius}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
-                                <Path Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
-                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
-                            </Viewbox>
+                            <Path x:Name="path" Margin="0,0,5,0" Data="{TemplateBinding qk:IconElement.Geometry}" Stretch="Uniform" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" 
+                                    Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}"  />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </StackPanel>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Content" Value="{x:Null}">
-                            <Setter TargetName="viewBox" Property="Margin" Value="0" />
+                            <Setter TargetName="path" Property="Margin" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -58,6 +55,49 @@
                 <Setter Property="Background" Value="{DynamicResource qf_br_ar_btn_bkg_disabled}"/>
                 <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}"/>
                 <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn_disabled}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="QButtonIconStyle" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Name="PART_Border" CornerRadius="{TemplateBinding qk:BorderElement.CornerRadius}" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Path x:Name="path" Margin="0,0,5,0" Data="{TemplateBinding qk:IconElement.Geometry}" Stretch="Uniform" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" 
+                                    Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}"  />
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="path" Property="Margin" Value="0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn_disabled}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource qf_br_ar_btn_bkg_disabled}" />
             </Trigger>
         </Style.Triggers>
     </Style>

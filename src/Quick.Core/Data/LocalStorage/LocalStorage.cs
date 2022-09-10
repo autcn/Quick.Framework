@@ -133,16 +133,19 @@ namespace Quick
 
         public void Save()
         {
-            lock(_storage)
+            if(_storage != null)
             {
-                if (_storageInConfig)
+                lock (_storage)
                 {
-                    _qConfiguration.Save();
-                }
-                else
-                {
-                    string strJson = JsonConvert.SerializeObject(_storage, Formatting.Indented);
-                    File.WriteAllText(_filePath, strJson, Encoding.UTF8);
+                    if (_storageInConfig)
+                    {
+                        _qConfiguration.Save();
+                    }
+                    else
+                    {
+                        string strJson = JsonConvert.SerializeObject(_storage, Formatting.Indented);
+                        File.WriteAllText(_filePath, strJson, Encoding.UTF8);
+                    }
                 }
             }
         }

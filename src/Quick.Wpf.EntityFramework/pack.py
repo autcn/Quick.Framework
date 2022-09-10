@@ -61,7 +61,7 @@ def unzip_file(zipFileName, unzipToDir):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-Configuration','--Configuration', default='Release')
-parser.add_argument('-Version','--Version', default='1.1.0')
+parser.add_argument('-Version','--Version', default='1.2.0')
 parser.add_argument('-CoreVersion','--CoreVersion', default='1.1.0')
 args = parser.parse_args()
 
@@ -103,7 +103,7 @@ print('准备修改.nuspec文件')
 
 DepXml = f"""
 <group targetFramework=".NETFramework4.6.1">
-        <dependency id="QuickFramework.Wpf" version="[{Version}]" exclude="Build,Analyzers" />
+        <dependency id="QuickFramework.Wpf" version="{CoreVersion}" exclude="Build,Analyzers" />
         <dependency id="Microsoft.EntityFrameworkCore" version="[3.1.18,3.1.20]" exclude="Build,Analyzers" />
         <dependency id="Microsoft.EntityFrameworkCore.Relational" version="[3.1.18,3.1.20]" exclude="Build,Analyzers" />
       </group>

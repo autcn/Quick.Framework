@@ -13,10 +13,8 @@
         <Setter Property="Background" Value="{DynamicResource qf_br_ar_btn_bkg_normal}" />
         <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
         <Setter Property="qk:SwitchElement.CheckedBrush" Value="{DynamicResource qf_br_text_btn}" />
-        <Setter Property="Padding" Value="3,3" />
+        <Setter Property="Padding" Value="8,3" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="qk:IconElement.Width" Value="1024" />
-        <Setter Property="qk:IconElement.Height" Value="1024" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -25,10 +23,9 @@
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
-                                <Path Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
-                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
-                            </Viewbox>
+                            <Path x:Name="path" Stretch="Uniform" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
+                                      Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" 
+                                     Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}" />
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </StackPanel>
@@ -36,7 +33,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="Content" Value="{x:Null}">
-                            <Setter TargetName="viewBox" Property="Margin" Value="0" />
+                            <Setter TargetName="path" Property="Margin" Value="0" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -110,16 +107,14 @@
     </Style>
 
     <Style x:Key="QToggleBtnSwitchIconStyle" TargetType="ToggleButton">
-       <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{DynamicResource qf_br_text_btn}" />
         <Setter Property="Background" Value="{DynamicResource qf_br_ar_btn_bkg_normal}" />
         <Setter Property="BorderBrush" Value="{DynamicResource qf_br_border}" />
         <Setter Property="qk:SwitchElement.CheckedBrush" Value="{DynamicResource qf_br_text_btn}" />
-        <Setter Property="Padding" Value="3,3" />
+        <Setter Property="Padding" Value="8,3" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="qk:IconElement.Width" Value="1024" />
-        <Setter Property="qk:IconElement.Height" Value="1024" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -128,15 +123,12 @@
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
-                                <Grid>
-                                    <Path x:Name="uncheckedPath" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
+                            <Grid x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
+                                <Path x:Name="uncheckedPath" Stretch="Uniform" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
                                       Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
-                                    <Path x:Name="checkedPath" Data="{TemplateBinding qk:SwitchElement.GeometryChecked}" Fill="{TemplateBinding Foreground}" 
+                                <Path x:Name="checkedPath" Stretch="Uniform" Data="{TemplateBinding qk:SwitchElement.GeometryChecked}" Fill="{TemplateBinding Foreground}" 
                                       Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" Visibility="Collapsed" />
-                                </Grid>
-                                
-                            </Viewbox>
+                            </Grid>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </StackPanel>
@@ -193,8 +185,6 @@
         <Setter Property="qk:SwitchElement.CheckedBrush" Value="{DynamicResource qf_br_text_btn}" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="qk:IconElement.Width" Value="1024" />
-        <Setter Property="qk:IconElement.Height" Value="1024" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
@@ -203,19 +193,15 @@
                             Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Viewbox x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
-                                <Grid>
-                                    <Path x:Name="uncheckedPath" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
+                            <Grid x:Name="viewBox" Margin="0,0,5,0" Visibility="{TemplateBinding qk:IconElement.Geometry,Converter={StaticResource QNullableToCollapsedConverter}}">
+                                <Path x:Name="uncheckedPath" Stretch="Uniform" Data="{TemplateBinding qk:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" 
                                       Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" />
-                                    <Path x:Name="checkedPath" Data="{TemplateBinding qk:SwitchElement.GeometryChecked}" Fill="{TemplateBinding Foreground}" 
+                                <Path x:Name="checkedPath" Stretch="Uniform" Data="{TemplateBinding qk:SwitchElement.GeometryChecked}" Fill="{TemplateBinding Foreground}" 
                                       Width="{TemplateBinding qk:IconElement.Width}" Height="{TemplateBinding qk:IconElement.Height}" Visibility="Collapsed" />
-                                </Grid>
-
-                            </Viewbox>
+                            </Grid>
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
                         </StackPanel>
-
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">

@@ -85,6 +85,24 @@ namespace Quick
             }
         }
 
+        private IMessageBox _msgBox;
+        public IMessageBox MsgBox
+        {
+            get
+            {
+                return QServiceProvider.LazyGetRequiredService(ref _msgBox);
+            }
+        }
+
+        private IServiceProvider _serviceProvider;
+        public IServiceProvider ServiceProvider
+        {
+            get
+            {
+                return QServiceProvider.LazyGetRequiredService(ref _serviceProvider);
+            }
+        }
+
         #endregion
 
         #region Events

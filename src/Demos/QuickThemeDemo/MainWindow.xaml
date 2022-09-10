@@ -39,6 +39,10 @@
                 <Button Width="100" Content="DataGrid" Click="btnDataGridDemo_Click" />
                 <Button Width="100" Content="其他控件" Click="btnOtherControlDemo_Click" />
             </SpaceStackPanel>
+            
         </HeaderedContentControl>
+        
     </Grid>
 </qk:QWindow>
+
+    
