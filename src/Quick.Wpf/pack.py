@@ -61,7 +61,7 @@ def unzip_file(zipFileName, unzipToDir):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-Configuration','--Configuration', default='Release')
-parser.add_argument('-Version','--Version', default='1.2.0')
+parser.add_argument('-Version','--Version', default='1.2.2')
 parser.add_argument('-CoreVersion','--CoreVersion', default='1.1.0')
 args = parser.parse_args()
 
@@ -106,7 +106,7 @@ DepXml = f"""
         <dependency id="PropertyChanged.Fody" version="3.4.0" exclude="Build,Analyzers" />
         <dependency id="WindowsAPICodePack-Shell" version="[1.1.1]" exclude="Build,Analyzers" />
         <dependency id="DevExpressMvvm" version="21.1.5" exclude="Build,Analyzers" />
-        <dependency id="QuickFramework.Core" version="[{CoreVersion}]" exclude="Build,Analyzers" />
+        <dependency id="QuickFramework.Core" version="{CoreVersion}" exclude="Build,Analyzers" />
       </group>
 """
 
